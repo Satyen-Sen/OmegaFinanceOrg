@@ -20,7 +20,7 @@ a {
   position: relative;
 }
 
-.topBox {
+.topBar {
   display: flex;
   justify-content: space-between;
 }

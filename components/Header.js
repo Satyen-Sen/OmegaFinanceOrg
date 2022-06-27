@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Container,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
+import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
+import MenuButton from './MenuButton'; 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +13,7 @@ const Header = () => {
 
   const handleScroll = () => {
     if (window.scrollY > 90) {
-      setSticky(true);
+      setSticky(true); 
     } else if (window.scrollY < 90) {
       setSticky(false);
     }
@@ -30,11 +22,11 @@ const Header = () => {
   return (
     <div className={`header${sticky ? ' sticky' : ''}`}>
       <Navbar light expand="md">
-        <Container>
+        <Container sx={{display:'flex',}}>
           <NavbarBrand href="/">LOGO</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="m-auto" navbar>
+            <Nav className="m-auto" navbar sx={{justifyContent:'right', alignItems:'right',}}>
               <NavItem>
                 <NavLink href="/">Home</NavLink>
               </NavItem>
@@ -48,9 +40,8 @@ const Header = () => {
                 <NavLink href="#about">About</NavLink>
               </NavItem>
             </Nav>
+            <MenuButton/>
           </Collapse>
-          <NavbarBrand href="/">LOGO</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
         </Container>
       </Navbar>
     </div>

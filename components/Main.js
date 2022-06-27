@@ -8,9 +8,11 @@ const Main = () => {
         <Row className="align-items-center">
           <Col lg={6}>
             <div className="pr-lg-5">
-              <p className="text-uppercase text-primary font-weight-medium f-14 mb-4">Lorem Ipsum</p>
-              <h1 className="mb-4 font-weight-normal line-height-1_4">Simply dummy text of the printing <span className="text-primary font-weight-medium">Name</span></h1>
-              <p className="text-muted mb-4 pb-2">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              <p className="text-uppercase text-primary font-weight-medium f-14 mb-4">Omega Finance</p>
+              <h1 className="mb-4 font-weight-normal line-height-1_4">Welcome to Omega Finance <span className="text-primary font-weight-medium">Name</span></h1>
+              <p className="text-muted mb-4 pb-2">
+                Omega Finance Group is an expert stock market trading and coaching institution with a proven track record in offering highly effective stock market trading ideas & financial planning services to a broad spectrum of clients. After our inception back in 2017 as a venture for helping out newbie stock investors, we have offered numerous clients recommendations and ideas that helped bag millions. 
+              </p>
               <a href="#" className="btn btn-warning">
                 Find Out How <span className="ml-2 right-icon">&#8594;</span>
               </a>

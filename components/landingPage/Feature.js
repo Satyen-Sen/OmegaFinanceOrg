@@ -13,7 +13,7 @@ const FeatureBox = (props) => {
               <img src={feature.img} alt="" className="img-fluid d-block mx-auto"/>
             </div>
           </Col>
-            <Col md={{size:6, offset:1}}>
+            <Col md={{size:6, offset:1}}> 
               <div className="mt-5 mt-sm-0 mb-4">
                 <div className="my-4">
                   <i className={feature.icon}></i>

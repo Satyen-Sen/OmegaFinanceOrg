@@ -24,3 +24,14 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.buttonGlobal {
+  text-transform:'capitalize'; 
+  width:150; 
+  font-family:'poppins'; 
+  font-size:16; 
+  height:40,
+
+}
+
+

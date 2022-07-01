@@ -71,7 +71,7 @@ export default function LoginTabs() {
                 </Grid>
             </Grid>
             <Box sx={{display:'flex', justifyContent:'center', width:300, p:2,}}>
-                <CustomButton variant="contained" sx={{m:2}}>Login</CustomButton>
+                <CustomButton variant="contained">Login</CustomButton>
             </Box>
         </Box>
       </TabPanel>

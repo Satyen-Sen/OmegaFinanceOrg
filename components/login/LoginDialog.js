@@ -46,7 +46,7 @@ export default function LoginDialog() {
       <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
         Login/Register
       </Button>
-      <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}} fullWidth maxWidth="md">
+      <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
         <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
             <DialogContents/>
         </BootstrapDialogContent> 

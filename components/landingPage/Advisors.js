@@ -64,14 +64,12 @@ function AllAdvisorCard() {
             started just a few years ago will minimumm capital, absolutely no experience, is earning millions everyday.  
           </Typography>      
         </Grid>
-        <Box sx={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center', mb:2,}}>
-          <Stack spacing={2} direction="row>
-            <SubscribeButton variant="outlined">View Profile</SubscribeButton>
-            <SubscribeButton variant="outlined">Subscribe</SubscribeButton>
+        <Box sx={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center', m:2,}}>
+          <Stack spacing={2} direction="row">
+            <SubscribeButton variant="outlined"> View Profile </SubscribeButton>
+            <SubscribeButton variant="outlined"> Subscribe </SubscribeButton>
           </Stack> 
-
         </Box>
-
       </Grid>
     </Card>
   );

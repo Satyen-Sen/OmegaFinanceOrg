@@ -32,7 +32,7 @@ function TestimonialCard() {
 
 export default function Testimonials() {
   return (
-    <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', p:4, mt:8,}}>
+    <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', p:4, mt:8, mb:8,}}>
       <Box sx={{width:'97%'}}> 
 
         <Box sx={{width:'50%', ml:6,}}>

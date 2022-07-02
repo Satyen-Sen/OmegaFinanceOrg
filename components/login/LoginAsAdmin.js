@@ -42,14 +42,14 @@ export default function LoginAsAdmin() {
   
     return (
       <div>
-        <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:260, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
-          Login As Administrator
+        <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:240, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
+          Login As Organiser
         </Button>
         <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
           <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
             <Box sx={{height:450, width:550,}}>
                 <FormControl className="illustration-wrapper" initialValues={{remember:true}}>
-                    <Typography variant="h5" sx={{m:4}}>Login As Administrator </Typography>  
+                    <Typography variant="h5" sx={{m:4}}>Login As Organiser </Typography>  
                     <Box sx={{m:4, ml:8}}> 
                         <Grid container spacing={0}>
                             <Grid item xs={2.5} sx={{display:'flex', alignItems:'center',}}>

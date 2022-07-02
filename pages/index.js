@@ -1,16 +1,18 @@
-import Layout from "../components/landingPage/Layout";
+import Layout from '../components/Layout';
 import Header from "../components/landingPage/Header";
 import Main from "../components/landingPage/Main";
+import Advisors from '../components/landingPage/Advisors';
+import Testimonials from "../components/landingPage/Testimonials";
 import Footer from '../components/landingPage/Footer';
-import UserReviews from "../components/landingPage/UserReviews";
 
 const Index = () => {
   return (
     <Layout pageTitle="Omega Finance">
       <Header/>
         <Main/>
-        <UserReviews/>
-      <Footer/>
+        <Advisors/>
+        <Testimonials/>
+        <Footer/>
     </Layout>
   )
 }

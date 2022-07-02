@@ -22,9 +22,9 @@ function TextAnimation({title, listarray, desc,}) {
 
             <Box sx={{m:2, mt:12, }}>
                 <div className="left-title">
-                    <Typography variant="h4" sx={{mb:2,}}>{title}&nbsp;</Typography> 
+                    <Typography variant="h4" sx={{mb:2, color:'#11193F'}}>{title}&nbsp;</Typography> 
                     {listarray ? 
-                        <Typography variant="h4" sx={{mb:2, color:'#1565C0',}} className="animate__animated animate__fadeInDown animate__slow animate__infinite"> 
+                        <Typography variant="h4" sx={{mb:2, color:'#FDAA3C',}} className="animate__animated animate__fadeInDown animate__slow animate__infinite"> 
                             {listarray[index]}
                         </Typography> 
                     : ""}
@@ -35,7 +35,7 @@ function TextAnimation({title, listarray, desc,}) {
     );
 }
 
-function Main() {
+export default function Welcome() {
 
   const description = "We help you see the world differently, discover opportunities you may never have imagined and achieve results that bridge what is with what can be.";
   
@@ -45,7 +45,8 @@ function Main() {
         <Row className="align-items-center">
           <Col lg={6}> 
             <div className="pr-lg-5">
-              <h1 className="mb-4 font-weight-normal line-height-1_4">Welcome to Omega Finance</h1>
+
+              <Typography variant="h3" sx={{color:'#11193F', mb:4, fontSize:44,}}>Welcome to Omega Finance</Typography>
               <p className="text-muted mb-4 pb-2">
                 Omega Finance Group is an expert stock market trading and coaching institution with a proven track record in offering highly effective stock market trading ideas & financial planning services to a broad spectrum of clients. After our inception back in 2017 as a venture for helping out newbie stock investors, we have offered numerous clients recommendations and ideas that helped bag millions. 
               </p>
@@ -66,15 +67,13 @@ function Main() {
             </Player>
           </Col>
           <Col lg={6}> 
-            <TextAnimation title="Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description}/>
+            <TextAnimation title="Learn & Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description}/>
             <Button variant="contained" href="https://omegafinancegroup.com/contacts/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
               Contact Us
-            </Button>
+            </Button> 
           </Col>  
         </Row>
       </Container> 
     </section>
   ); 
 }
-
-export default Main;

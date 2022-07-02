@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, } from 'reactstrap';
 import Head from 'next/head';
 import { Typography, Box, Button } from '@mui/material'; 
-import { styled } from '@mui/material/styles';
 import { Player } from '@lottiefiles/react-lottie-player';
 
 function TextAnimation({title, listarray, desc,}) {

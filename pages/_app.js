@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
-import '../styles/DialogContents.css';
 import '../styles/Footer.css';
 
 function MyApp({ Component, pageProps }) {

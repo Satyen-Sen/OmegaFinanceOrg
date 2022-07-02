@@ -1,6 +1,6 @@
 import Layout from '../components/primary/Layout';
 import Header from "../components/landingPage/Header";
-import Welcome from "../components/primary/Welcome";
+import Welcome from "../components/landingPage/Welcome";
 import PremiumAdvisors from '../components/primary/Advisors';
 import AllStockAdvisors from '../components/primary/AllStockAdvisors';
 import Testimonials from "../components/landingPage/Testimonials";

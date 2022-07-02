@@ -68,7 +68,7 @@ export default function Welcome() {
           </Col>
           <Col lg={6}> 
             <TextAnimation title="Learn & Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description}/>
-            <Button variant="contained" href="https://omegafinancegroup.com/contacts/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
+            <Button variant="contained" href="#" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
               Contact Us
             </Button> 
           </Col>  

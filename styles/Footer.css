@@ -1,106 +1,138 @@
-.footer{
-    background-color: #1e2232;
-    width: 98.9vw;
-    height: 450px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+/* @import url(./AnimationStyle.css); */
 
-.footer__inner{
+.InvestIn{
     display: flex;
-    justify-content: space-between;
-    margin-left: 125px;
-    margin-right: 125px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    font-size: 38px;
+    color:#44475b;
+    /* font-weight: 500; */
 }
-
-.footer__inner2{
-    margin-left: 125px;
-    margin-right: 125px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-
-.footer__inner22{
+.Slidder_vertical{
+    text-indent: 15px;
+    height:60px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    
 }
-
-.footer__div{
-    height: 1px;
-    opacity: 0.1;
-    border-bottom: 1px solid white;
-    margin-top: 30px;
-    margin-bottom: 15px; 
-}
-
-.footer__downloadicon{
-    margin-left: 30px;
-}
-
-.footer__col1{
-    max-width: 25%;
-}
-
-.footer__address{
-    color: white;
-    line-height: 30px;
-    padding: 10px 10px 0;
-    padding-left: 0 !important;
-    font-weight: 500;
-}
-
-.footer__contactline{
-    text-decoration: underline;
-    color: white;
-    margin-top: 20px;
-}
-
-.footer__socialicon{
-    padding: 15px;
-    padding-left: 0px !important;
-}
-
-.footer__col2{
-    max-width: 25%;
-}
-
-.footer__heading{
-    color: white;
-    padding: 10px;
-    font-size: 25px;
-}
-
-.footer__list{
+.Slidder_vertical span{
     display: flex;
     flex-direction: column;
+    animation:verticalSlide 7s infinite;
+    animation-delay: 3s;
+    position: relative;
+    height: 80px;
+}
+/****animation***************/
+@keyframes verticalSlide {
+      0%{
+            bottom:0px;
+      }
+      17%{
+            bottom:-70px;
+      }
+      34%{
+            bottom:-140px;
+      }
+      68%{
+          bottom: -210px;
+      }
+      85%{
+          bottom: -280px;
+      }
+      100%{
+          bottom:-350px
+      }
+         
+}
+/*color**/
+.Stocks_Color{
+    color:#5367ff;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+.MutualFunds_Color{
+    color:#00d09c;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+.FuturesOptions_Color{
+    color:#ffb61b;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+.UsStocks_Color{
+    color:#eb5b3c;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+.IPO_Color{
+    color:#d2ab66;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+.FDs_Color{
+    color:#5367ff;
+    padding-top:10px;
+    padding-bottom: 15px;
 }
 
-.footer__item{
-    text-decoration: none;
-    color: white;
-    padding: 7px;
-    font-weight: 500;
+/*******************FooterSection*******************************************************/
+.FooterSection{
+    background-color: #1e2232;
+    width: 100% auto;
+    height: 400px;
+    color:white;
+    padding-top:40px;
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.FooterSection_Address1{
+    margin-top:25px;
+}
+.FooterSection_Address1,
+.FooterSection_Address2,
+.FooterSection_Address3{
+    font-size: 18px;
 }
 
-.footer__col3{
-    max-width: 25%;
+.FooterSection_Product h2,
+.FooterSection_Groww h2,
+.FooterSection_QuickLink h2{
+    margin-bottom: 40px;
+    font-size: 20px;
 }
 
-.footer__col4{
-    max-width: 25%;
+.FooterSection_ProductList,
+.FooterSection_GrowwList,
+.FooterSection_QuickLinkList{
+    font-size: 18px;
+    line-height: 28px;
+}
+.FooterSection_ContactSocialMedia .ContactUs{
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.SocialMedia_icon{
+    margin: 5px;
 }
 
-.footer__copyright{
-    color: white;
-    padding: 20px;
-    padding-left: 0px;
-    font-weight: 500;
+.horizontalLine{
+    height: 0.3px;
+    width: 85%;
+    background-color:#7c7e8c;
+    margin:30px 100px;
 }
 
-.MuiInput-root {
-    margin: 10px;
-    width: 300px;
+.GrowwApplicationDownload a{
+    margin-right:20px;
 }
+.GrowwFooterlast{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin:0px 100px;
+}
+

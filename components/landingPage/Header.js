@@ -22,8 +22,9 @@ const Header = () => {
   return (
     <div className={`header${sticky ? ' sticky' : ''}`}>
       <Navbar light>
+
         <Container className='topBar'>
-          <NavbarBrand href="/">LOGO</NavbarBrand>
+          <img src="https://creativedebjani.in/omega_finance/wp-content/uploads/2020/07/Logo.png" width="80" height="40" alt="Omega Finance Group"/>
           <Stack direction="row" spacing={2} sx={{display:'flex', alignContent:'center',}}>
             <LoginDialog/> 
             <LoginAsAdmin/>

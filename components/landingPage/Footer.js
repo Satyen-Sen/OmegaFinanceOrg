@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Navbar, NavbarBrand,} from 'reactstrap'; 
 import { Box, Typography, Stack } from '@mui/material';  
 
 function Footer() {
@@ -7,8 +6,8 @@ function Footer() {
     <Box sx={{backgroundColor:'#1E2232', height:485, color:'#FFFFFF', pt:8, pb:12,}}>
       <Box sx={{display:'flex', flexDirection:'row', ml:12, mr:12,}}>
         
-          <Box sx={{width:400}}>
-            <NavbarBrand href="/">LOGO</NavbarBrand>
+          <Box sx={{width:400, mt:1,}}>
+            <img src="https://omegafinancegroup.com/wp-content/uploads/2020/07/Logo.png" width="140" height="70"  alt="Omega Finance Group"/>
             <p className="mt-4 mb-1"> 59 West, 46th Street, New York,</p>
             <p className="mb-4"> NY-10036, United States.</p>
             <Typography variant="body" sx={{textDecoration:'underline'}}>Contact Us</Typography>

@@ -5,35 +5,19 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
 }
 
-.buttonGlobal {
-  text-transform:'capitalize'; 
-  width:150; 
-  font-family:'poppins'; 
-  font-size:16; 
-  height:40,
-}
 
+
+/******************* Header Section *******************************************************/
 
 .header {
   padding: 10px 15px;
 }
-
-
 
 .topBar {
   display: flex;
@@ -66,4 +50,25 @@ a {
           transform: translateY(0%);
 }
 
+
+
+/*******************FooterSection*******************************************************/
+
+.SocialMedia_icon{
+  margin: 5px;
+}
+
+.horizontalLine{
+  height: 1px;
+  width: 86%;
+  background-color:#313238;
+  margin:48px 96px;
+}
+
+.footerBottom{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin:0 96px;
+}
 

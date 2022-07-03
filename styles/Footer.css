@@ -76,63 +76,7 @@
     padding-bottom: 15px;
 }
 
-/*******************FooterSection*******************************************************/
-.FooterSection{
-    background-color: #1e2232;
-    width: 100% auto;
-    height: 400px;
-    color:white;
-    padding-top:40px;
-}
-.row{
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-.FooterSection_Address1{
-    margin-top:25px;
-}
-.FooterSection_Address1,
-.FooterSection_Address2,
-.FooterSection_Address3{
-    font-size: 18px;
-}
 
-.FooterSection_Product h2,
-.FooterSection_Groww h2,
-.FooterSection_QuickLink h2{
-    margin-bottom: 40px;
-    font-size: 20px;
-}
 
-.FooterSection_ProductList,
-.FooterSection_GrowwList,
-.FooterSection_QuickLinkList{
-    font-size: 18px;
-    line-height: 28px;
-}
-.FooterSection_ContactSocialMedia .ContactUs{
-    text-decoration: underline;
-    margin-bottom: 10px;
-}
-.SocialMedia_icon{
-    margin: 5px;
-}
 
-.horizontalLine{
-    height: 0.3px;
-    width: 85%;
-    background-color:#7c7e8c;
-    margin:30px 100px;
-}
-
-.GrowwApplicationDownload a{
-    margin-right:20px;
-}
-.GrowwFooterlast{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin:0px 100px;
-}
 

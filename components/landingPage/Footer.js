@@ -1,72 +1,70 @@
 import * as React from 'react';
 import {Navbar, NavbarBrand,} from 'reactstrap'; 
-import { Button, Container, Stack } from '@mui/material';  
+import { Box, Typography, Stack } from '@mui/material';  
 
 function Footer() {
   return (
-    <div class="FooterSection">
-      <div class="row">
-          <div class="GrowwCompanyDetails">
+    <Box sx={{backgroundColor:'#1E2232', height:485, color:'#FFFFFF', pt:8, pb:12,}}>
+      <Box sx={{display:'flex', flexDirection:'row', ml:12, mr:12,}}>
+        
+          <Box sx={{width:400}}>
             <NavbarBrand href="/">LOGO</NavbarBrand>
-              <p class="FooterSection_Address1">No.11, 2nd floor, 80 FT Road</p>
-              <p class="FooterSection_Address2">4th Block, S.T Bed, Koramangala</p>
-              <p class="FooterSection_Address3">Bengaluru – 560034</p>
-              
-              <div class="FooterSection_ContactSocialMedia">
-                  <div class="ContactUs">Contact Us</div>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/fb_icon_groww.1c94e937.svg"/></a>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/twitter_icon_groww.4cb988f6.svg"/></a>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/yt_icon_groww.ec96b677.svg"/></a>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/instagram_icon_groww.0454c1a2.svg"/></a>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/linkedin_icon_groww.b15f8240.svg"/></a>
-                  <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/telegram_icon_groww.f6524497.svg"/></a>
-              </div>
-          </div>
+            <p className="mt-4 mb-1"> 59 West, 46th Street, New York,</p>
+            <p className="mb-4"> NY-10036, United States.</p>
+            <Typography variant="body" sx={{textDecoration:'underline'}}>Contact Us</Typography>
+            
+            <Box sx={{mt:1, ml:-0.5,}}> 
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/fbIcon.svg"/></a>
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/twitterIcon.svg"/></a>
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/ytIcon.svg"/></a>
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/instaIcon.svg"/></a>
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/linkedInIcon.svg"/></a>
+                <a href="#" class="SocialMedia_icon"><img src="./SocialMediaIcon/telegramIcon.svg"/></a>
+            </Box>
+          </Box>
 
-          <div class="FooterSection_Product">
-              <h2>PRODUCTS</h2>
-              <div class="FooterSection_ProductList">Stocks</div>
-              <div class="FooterSection_ProductList">Futures & Options</div>
-              <div class="FooterSection_ProductList">Mutual Funds</div>
-              <div class="FooterSection_ProductList">Fixed Deposit</div>
-              <div class="FooterSection_ProductList">US Stocks</div>
-          </div>
+          <Box sx={{width:280}}>
+              <Typography variant="h6">PRODUCTS</Typography> 
+              <p className="mt-4 mb-1">Fixed Deposits</p>
+              <p className="mb-1">Stock Market</p>
+              <p className="mb-1">US Stocks</p>
+              <p className="mb-1">Mutual Funds</p>
+              <p className="mb-1">Futures & Options</p>
+          </Box>
 
-          <div class="FooterSection_Groww">
-              <h2>GROWW</h2>
-              <div class="FooterSection_GrowwList">About Us</div>
-              <div class="FooterSection_GrowwList">Pricing</div>
-              <div class="FooterSection_GrowwList">Blog</div>
-              <div class="FooterSection_GrowwList">Media & Press</div>
-              <div class="FooterSection_GrowwList">Carrees</div>
-              <div class="FooterSection_GrowwList">Help & Support</div>
-          </div>
-          <div class="FooterSection_QuickLink">
-              <h2>QUICK LINKS</h2>
-              <div class="FooterSection_QuickLinkList">AMC Mutual Funds</div>
-              <div class="FooterSection_QuickLinkList">Calculators</div>
-              <div class="FooterSection_QuickLinkList">Glossary</div>
-              <div class="FooterSection_QuickLinkList">Open Demat Account</div>
-              <div class="FooterSection_QuickLinkList">Groww Digest</div>
-              <div class="FooterSection_QuickLinkList">Groww Academy</div>
-              <div class="FooterSection_QuickLinkList">Sitemap</div>
-          </div>
-      </div>
+          <Box sx={{width:300}}>
+              <Typography variant="h6">OMEGA FINANCE</Typography> 
+              <p className="mt-4 mb-1">Contact Us</p>
+              <p className="mb-1">Blogs</p>
+              <p className="mb-1">Pricing</p>
+              <p className="mb-1">Privacy Policy</p>
+              <p className="mb-1">Help & Support</p>
+              <p className="mb-1">Terms & Conditions</p>
+          </Box>
 
+          <Box sx={{width:250}}>
+              <Typography variant="h6">QUICK LINKS</Typography> 
+              <p className="mt-4 mb-1">Open Demat Account</p>
+              <p className="mb-1">AMC Mutual Funds</p>
+              <p className="mb-1">Performance</p>
+              <p className="mb-1">Glossary</p>
+              <p className="mb-1">Sitemap</p>
+              <p className="mb-1">Calculators</p>
+              <p className="mb-1">Omega Academy</p>
+          </Box>
+      </Box>
 
       <div class="horizontalLine"></div>
 
-      <div class="GrowwFooterlast">
-          <div class="GrowwCopyRight">
-              © 2016-2022 Groww. All right reserved, Built with 💖 in india
-          </div>
-          <div class="GrowwApplicationDownload">
-              <a href="#"><img src="./applicationAvailable/app-store-logo.060773ea.svg"/></a>
-              <a href="#"><img src="./applicationAvailable/google-play-badge.0547a72f.svg"/></a>
-          </div>
-      </div>
-    </div>
-);
+      <Box class="footerBottom">
+          <Typography variant="body" sx={{fontSize:14}}>© 2022-2023 Omega Finance Group. All right reserved, Built with 💖 in India.</Typography> 
+          <Stack direction="row" spacing={4} sx={{mr:4, mt:-1,}}>
+              <a href="#"><img src="./AppStore/apple.svg"/></a>
+              <a href="#"><img src="./AppStore/play.svg"/></a>
+          </Stack>
+      </Box>
+    </Box>
+  );
 }
 
 export default Footer;

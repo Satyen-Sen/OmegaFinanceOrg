@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Dialog, DialogContent, IconButton, } from '@mui/material'; 
+import { Grid, FormControl, Typography, Box, Chip, Divider,Link, Button, Dialog, DialogContent, IconButton, } from '@mui/material'; 
+import LoginTabs from './LoginTabs';
 import { styled } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
-import DialogContents from './DialogContents';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -48,7 +48,31 @@ export default function LoginDialog() {
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
         <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
-            <DialogContents/>
+          <Box className="login-box" sx={{height:500, width:450,}}>
+            <FormControl className="illustration-wrapper" initialValues={{remember: true,}}>
+
+                <Typography variant="h5" sx={{m:2, mt:4}}>Login with:</Typography>  
+                <LoginTabs/>
+
+                <Grid container spacing={2} sx={{width:'80%', mb:3,}}>
+                    <Grid item xs>
+                        <Link href="#" variant="body2">Create an Account</Link>
+                    </Grid>
+                    <Grid item>
+                        <Link href="#" variant="body2">Forgot password?</Link>
+                    </Grid>
+                </Grid>
+            </FormControl>
+
+            <Divider variant="middle" sx={{ml:4, mr:4}}><Chip label="or Continue With"/></Divider>
+            <Box sx={{p:2, ml:10, mr:10,}}>
+                <Grid container spacing={1}>
+                    <Grid item xs={4}>  <Button>FacebookIcon</Button>   </Grid>
+                    <Grid item xs={4}>  <Button>GoogleIcon</Button>     </Grid>
+                    <Grid item xs={4}>  <Button>AppleIcon</Button>      </Grid>
+                </Grid>
+            </Box>      
+          </Box>
         </BootstrapDialogContent> 
       </BootstrapDialog>
     </div>

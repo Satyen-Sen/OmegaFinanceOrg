@@ -50,7 +50,7 @@ export default function Welcome() {
               <p className="text-muted mb-4 pb-2">
                 Omega Finance Group is an expert stock market trading and coaching institution with a proven track record in offering highly effective stock market trading ideas & financial planning services to a broad spectrum of clients. After our inception back in 2017 as a venture for helping out newbie stock investors, we have offered numerous clients recommendations and ideas that helped bag millions. 
               </p>
-              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
+              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                 Explore More
               </Button>
 

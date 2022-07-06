@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Tab, Tabs, Button, TextField, Typography, Box, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const CustomButton = styled(Button)({textTransform:'capitalize', fontFamily:'poppins', width:150, fontWeight:600,});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -39,61 +38,48 @@ function a11yProps(index) {
 }
 
 export default function LoginTabs() {
+  
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+
   return (
-    <Box sx={{ width:'85%'}}>
-      <Box sx={{ borderBottom:1, borderColor: 'divider'}}>
+    <Box>
+      <Box>    
         <Tabs value={value} onChange={handleChange}>
-          <Tab label={<CustomButton variant="outlined">Email</CustomButton>} {...a11yProps(0)}/>
-          <Tab label={<CustomButton variant="outlined">Phone</CustomButton>} {...a11yProps(1)}/>
+          <Tab label="Email"
+           {...a11yProps(0)}/>
+          <Tab label="Phone" {...a11yProps(1)}/>
         </Tabs>
       </Box>
 
       <TabPanel value={value} index={0}>
-        <Box width={300} height={150}>
-            <Grid container spacing={1} sx={{width:'110%', ml:-2, mr:-5,}}>
-                <Grid item xs={4}>
-                    <Typography variant="h6" sx={{fontSize:19}}>Email :</Typography>
-                </Grid>
-                <Grid item xs={8}>
-                    <TextField id="email" variant="standard" placeholder="Enter your Email here" sx={{required: true, width:'100%'}}/>
-                </Grid>
-                <Grid item xs={4}>
-                    <Typography variant="h6" sx={{fontSize:20}}>Password :</Typography>
-                </Grid> 
-                <Grid item xs={8}>
-                <TextField id="password" variant="standard" placeholder="Enter your password here" sx={{required: true, width:'100%'}}/>
-                </Grid>
-            </Grid>
-            <Box sx={{display:'flex', justifyContent:'center', width:300, p:2,}}>
-                <CustomButton variant="contained">Login</CustomButton>
-            </Box>
+        <Box width={300} height={130}>
+          <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }} sx={{m:2,}} fullWidth/>
+          <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }}  size="small" fullWidth/>
+              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                Login
+              </Button>
         </Box>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-      <Box width={300} height={150}>
-            <Grid container spacing={1} sx={{width:'110%', ml:-2, mr:-5,}}>
-                <Grid item xs={4}>
-                    <Typography variant="h6" sx={{fontSize:19}}>Phone :</Typography>
-                </Grid>
-                <Grid item xs={8}>
-                    <TextField id="phone" variant="standard" placeholder="Enter your Phone number" sx={{required: true, width:'100%'}}/>
-                </Grid>
-                <Grid item xs={4}>
-                    <Typography variant="h6" sx={{fontSize:20}}>Password :</Typography>
-                </Grid> 
-                <Grid item xs={8}>
-                <TextField id="password" variant="standard" placeholder="Enter your password here" sx={{required: true, width:'100%'}}/>
-                </Grid>
+        <Box width={300} height={130}>
+          <Grid container spacing={1} sx={{width:'110%', ml:-2, mr:-5,}}>
+            <Grid item xs={4}>
+              <Typography variant="h6" sx={{fontSize:19}}>Phone :</Typography>
             </Grid>
-            <Box sx={{display:'flex', justifyContent:'center', width:300, p:2,}}>
-                <CustomButton variant="contained" sx={{m:2}}>Login</CustomButton>
+              <Grid item xs={8}>
+                <TextField id="phone" variant="standard" placeholder="Enter your Phone number" sx={{required: true, width:'100%'}}/>
+              </Grid>
+          </Grid>
+            <Box sx={{display:'flex', justifyContent:'center', p:2,}}>
+              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                Send OTP
+              </Button>
             </Box>
         </Box>
       </TabPanel>

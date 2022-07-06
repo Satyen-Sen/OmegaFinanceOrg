@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Tab, Tabs, Button, TextField, Typography, Box, Grid } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Paper, Tab, Tabs, Button, TextField, Typography, Box, Grid } from '@mui/material';
 
 
 function TabPanel(props) {
@@ -40,19 +39,17 @@ function a11yProps(index) {
 export default function LoginTabs() {
   
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-
   return (
     <Box>
-      <Box>    
-        <Tabs value={value} onChange={handleChange}>
-          <Tab label="Email"
-           {...a11yProps(0)}/>
-          <Tab label="Phone" {...a11yProps(1)}/>
+
+      <Box sx={{display:'flex', justifyContent:'center',}}>   
+        <Tabs value={value} onChange={handleChange} centered> 
+            <Tab label="Email" {...a11yProps(0)} sx={{borderRadius:2, backgroundColor:'inherit',}}/>
+            <Tab label="Phone" {...a11yProps(1)} sx={{borderRadius:2, backgroundColor:'inherit',}}/>
         </Tabs>
       </Box>
 
@@ -60,9 +57,9 @@ export default function LoginTabs() {
         <Box width={300} height={130}>
           <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }} sx={{m:2,}} fullWidth/>
           <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }}  size="small" fullWidth/>
-              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                Login
-              </Button>
+            <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+              Login
+            </Button>
         </Box>
       </TabPanel>
 

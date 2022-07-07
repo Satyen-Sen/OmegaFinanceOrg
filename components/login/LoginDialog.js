@@ -54,7 +54,7 @@ export default function LoginDialog() {
                 <Typography variant="h5" sx={{m:2, mt:4}}>Login with:</Typography>  
                 <LoginTabs/>
 
-                <Grid container spacing={2} sx={{width:'80%', mb:3,}}>
+                <Grid container spacing={2} sx={{width:'78%', mb:3,}}>
                     <Grid item xs>
                         <Link href="#" variant="body2">Create an Account</Link>
                     </Grid>

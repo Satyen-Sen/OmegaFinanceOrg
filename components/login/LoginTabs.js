@@ -1,7 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Paper, Tab, Tabs, Button, TextField, Typography, Box, Grid } from '@mui/material';
-
+import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import LoginTabEmail from './LoginTabEmail';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,6 +37,12 @@ function a11yProps(index) {
   };
 }
 
+const CustomTab = withStyles({
+  root: {
+    fontWeight:600,
+  } 
+})(Tab);
+
 export default function LoginTabs() {
   
   const [value, setValue] = React.useState(0);
@@ -45,40 +52,31 @@ export default function LoginTabs() {
 
   return (
     <Box>
-
-      <Box sx={{display:'flex', justifyContent:'center',}}>   
-        <Tabs value={value} onChange={handleChange} centered> 
-            <Tab label="Email" {...a11yProps(0)} sx={{borderRadius:2, backgroundColor:'inherit',}}/>
-            <Tab label="Phone" {...a11yProps(1)} sx={{borderRadius:2, backgroundColor:'inherit',}}/>
-        </Tabs>
-      </Box>
+      <Tabs value={value} onChange={handleChange} tabItemContainerStyle={{height:10}}> 
+          <CustomTab label="Email" {...a11yProps(0)} sx={{borderRadius:2, borderColor:'inherit', border:1, m:1, mr:2, width:150,}}/>
+          <CustomTab label="Phone" {...a11yProps(1)} sx={{borderRadius:2, borderColor:'inherit', border:1, m:1, ml:2, width:150,}}/>
+      </Tabs>
 
       <TabPanel value={value} index={0}>
-        <Box width={300} height={130}>
-          <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }} sx={{m:2,}} fullWidth/>
-          <TextField id="email" variant="filled" placeholder="Enter your Email here" InputProps={{ disableUnderline: true }}  size="small" fullWidth/>
+        <Box width={300} height={160} sx={{mt:-2}}>
+          <LoginTabEmail/>
+          <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
             <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Login
             </Button>
+          </Box>
         </Box>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        <Box width={300} height={130}>
-          <Grid container spacing={1} sx={{width:'110%', ml:-2, mr:-5,}}>
-            <Grid item xs={4}>
-              <Typography variant="h6" sx={{fontSize:19}}>Phone :</Typography>
-            </Grid>
-              <Grid item xs={8}>
-                <TextField id="phone" variant="standard" placeholder="Enter your Phone number" sx={{required: true, width:'100%'}}/>
-              </Grid>
-          </Grid>
-            <Box sx={{display:'flex', justifyContent:'center', p:2,}}>
-              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                Send OTP
-              </Button>
-            </Box>
-        </Box>
+        <Box width={300} height={160}  sx={{mt:-2}}>
+          <LoginTabEmail/>
+          <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
+            <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+              Send OTP
+            </Button>
+          </Box>
+        </Box> 
       </TabPanel>
     </Box>
   );

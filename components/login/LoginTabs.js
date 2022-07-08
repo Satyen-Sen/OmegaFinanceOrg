@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import LoginTabEmail from './LoginTabEmail';
+import MuiPhoneNumber from "material-ui-phone-number";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,7 +62,7 @@ export default function LoginTabs() {
         <Box width={300} height={160} sx={{mt:-2}}>
           <LoginTabEmail/>
           <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-            <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+            <Button variant="contained" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Login
             </Button>
           </Box>
@@ -69,10 +70,12 @@ export default function LoginTabs() {
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        <Box width={300} height={160}  sx={{mt:-2}}>
-          <LoginTabEmail/>
-          <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-            <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+        <Box width={300} height={136} sx={{mt:-2}}>
+          <Box sx={{display:'flex', justifyContent:'center', mt:4,}}>
+            <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log}/>
+          </Box>
+          <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
+            <Button variant="contained" href sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Send OTP
             </Button>
           </Box>

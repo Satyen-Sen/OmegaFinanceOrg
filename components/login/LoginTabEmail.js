@@ -32,12 +32,12 @@ export default function EmailLoginTab() {
   return (
     <Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end', m: 1,}}>
-        <MailIcon sx={{color:'action.active', mr:1, my: 0.5}} />
+        <MailIcon sx={{color:'#11193F', mr:1, my: 0.5}} />
         <TextField label="Email" variant="standard" sx={{width:215}} size="small"/>
       </Box>
 
       <Box sx={{ display: 'flex', flexWrap: 'wrap', mt:-2,}}>
-        <KeyRoundedIcon sx={{color:'action.active', ml:1, my:3.5,}}/>
+        <KeyRoundedIcon sx={{color:'#11193F', ml:1, my:3.5,}}/>
         <FormControl sx={{ m: 1, width:215,}} variant="standard">
           
           <InputLabel>Password</InputLabel>

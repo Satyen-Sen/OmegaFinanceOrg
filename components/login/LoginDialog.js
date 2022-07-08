@@ -1,9 +1,14 @@
 import * as React from 'react';
+import Image from 'next/image'
 import PropTypes from 'prop-types';
 import { Grid, FormControl, Typography, Box, Chip, Divider,Link, Button, Dialog, DialogContent, IconButton, } from '@mui/material'; 
 import LoginTabs from './LoginTabs';
 import { styled } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
+import facebookIcon from '../../public/images/facebook.png';
+import googleIcon from '../../public/images/google.png';
+import appleIcon from '../../public/images/apple.png';
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -65,11 +70,11 @@ export default function LoginDialog() {
             </FormControl>
 
             <Divider variant="middle" sx={{ml:4, mr:4}}><Chip label="or Continue With"/></Divider>
-            <Box sx={{p:2, ml:10, mr:10,}}>
+            <Box sx={{p:1.5, ml:16, mr:16,}}>
                 <Grid container spacing={1}>
-                    <Grid item xs={4}>  <Button>FacebookIcon</Button>   </Grid>
-                    <Grid item xs={4}>  <Button>GoogleIcon</Button>     </Grid>
-                    <Grid item xs={4}>  <Button>AppleIcon</Button>      </Grid>
+                    <Grid item xs={4}>  <Button><Image src={facebookIcon} alt="facebook"  width={25} height={25}/></Button>   </Grid>
+                    <Grid item xs={4}>  <Button><Image src={googleIcon} alt="facebook"  width={25} height={25}/></Button>     </Grid>
+                    <Grid item xs={4}>  <Button><Image src={appleIcon} alt="facebook"  width={25} height={25  }/></Button>      </Grid>
                 </Grid>
             </Box>      
           </Box>

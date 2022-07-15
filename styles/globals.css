@@ -5,6 +5,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+* {
+  font-family: 'poppins';
+}
+
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -12,16 +16,10 @@ body {
 }
 
 
-
 /******************* Header Section *******************************************************/
 
 .header {
   padding: 10px 15px;
-}
-
-.topBar {
-  display: flex;
-  justify-content: space-between;
 }
 
 .header.sticky {

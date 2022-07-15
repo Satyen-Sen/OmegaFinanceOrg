@@ -9,7 +9,6 @@ import facebookIcon from '../../public/images/facebook.png';
 import googleIcon from '../../public/images/google.png';
 import appleIcon from '../../public/images/apple.png';
 
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(0),
@@ -36,7 +35,8 @@ BootstrapDialogContent.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function LoginDialog() {
+export default function LoginDialog(props) {
+  const {handleCreateAccountOpen} = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -46,6 +46,11 @@ export default function LoginDialog() {
     setOpen(false);
   };
 
+  const handleCreateAccount = () => {
+    handleClose();
+    handleCreateAccountOpen()
+  }
+
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
@@ -53,20 +58,23 @@ export default function LoginDialog() {
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
         <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
-          <Box className="login-box" sx={{height:500, width:450,}}>
-            <FormControl className="illustration-wrapper" initialValues={{remember: true,}}>
+          <Box className="login-box" sx={{height:510, width:450,}}>
+            <FormControl initialValues={{remember: true,}} sx={{display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
 
                 <Typography variant="h5" sx={{m:2, mt:4}}>Login with:</Typography>  
                 <LoginTabs/>
 
                 <Grid container spacing={2} sx={{width:'78%', mb:3,}}>
                     <Grid item xs>
-                        <Link href="#" variant="body2">Create an Account</Link>
+                        <Button variant="text" onClick={handleCreateAccount} sx={{textTransform:'capitalize'}}>
+                          <Link href="#" variant="body2">Create an Account</Link>
+                        </Button>
                     </Grid>
                     <Grid item>
                         <Link href="#" variant="body2">Forgot password?</Link>
                     </Grid>
                 </Grid>
+
             </FormControl>
 
             <Divider variant="middle" sx={{ml:4, mr:4}}><Chip label="or Continue With"/></Divider>
@@ -74,12 +82,12 @@ export default function LoginDialog() {
                 <Grid container spacing={1}>
                     <Grid item xs={4}>  <Button><Image src={facebookIcon} alt="facebook"  width={25} height={25}/></Button>   </Grid>
                     <Grid item xs={4}>  <Button><Image src={googleIcon} alt="facebook"  width={25} height={25}/></Button>     </Grid>
-                    <Grid item xs={4}>  <Button><Image src={appleIcon} alt="facebook"  width={25} height={25  }/></Button>      </Grid>
+                    <Grid item xs={4}>  <Button><Image src={appleIcon} alt="facebook"  width={25} height={25}/></Button>      </Grid>
                 </Grid>
             </Box>      
           </Box>
         </BootstrapDialogContent> 
       </BootstrapDialog>
-    </div>
+    </div>    
   );
 }

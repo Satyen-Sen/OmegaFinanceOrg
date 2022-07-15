@@ -53,12 +53,12 @@ function Footer() {
           </Box>
       </Box>
 
-      <div class="horizontalLine"></div>
+      <div className="horizontalLine"></div>
 
-      <Box class="footerBottom">
-          <Typography variant="body" sx={{fontSize:14}}>© 2022-2023 Omega Finance Group. All right reserved, Built with 💖 in India.</Typography> 
-          <Stack direction="row" spacing={4} sx={{mr:4, mt:-1,}}>
-              <a href="#"><img src="./AppStore/apple.svg"/></a>
+      <Box sx={{ml:12, mr:12, display:'flex',}}>
+        <Typography variant="body" sx={{fontSize:14, ml:2,}}>© 2022-2023 Omega Finance Group. All right reserved, Built with 💖 in India.</Typography>   
+          <Stack direction="row" spacing={4} sx={{ml:40, mt:-1,}}>
+              <a href="#"><img src="./AppStore/apple.svg"/></a>  
               <a href="#"><img src="./AppStore/play.svg"/></a>
           </Stack>
       </Box>

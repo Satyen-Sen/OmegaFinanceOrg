@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import LoginTabEmail from './LoginTabEmail';
+import EnterOTP from './EnterOTP';
 import MuiPhoneNumber from "material-ui-phone-number";
 
 function TabPanel(props) {
@@ -75,9 +76,7 @@ export default function LoginTabs() {
             <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log}/>
           </Box>
           <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
-            <Button variant="contained" href sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-              Send OTP
-            </Button>
+            <EnterOTP/>
           </Box>
         </Box> 
       </TabPanel>

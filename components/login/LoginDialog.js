@@ -48,7 +48,7 @@ export default function LoginDialog(props) {
 
   const handleCreateAccount = () => {
     handleClose();
-    handleCreateAccountOpen()
+    handleCreateAccountOpen();
   }
 
   return (
@@ -62,7 +62,7 @@ export default function LoginDialog(props) {
             <FormControl initialValues={{remember: true,}} sx={{display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
 
                 <Typography variant="h5" sx={{m:2, mt:4}}>Login with:</Typography>  
-                <LoginTabs/>
+                <LoginTabs handleEnterOTPOpen={handleClickOpen}/>
 
                 <Grid container spacing={2} sx={{width:'78%', mb:3,}}>
                     <Grid item xs>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import LoginTabEmail from './LoginTabEmail';
-import EnterOTP from './EnterOTP';
 import MuiPhoneNumber from "material-ui-phone-number";
 
 function TabPanel(props) {
@@ -45,12 +44,26 @@ const CustomTab = withStyles({
   } 
 })(Tab);
 
-export default function LoginTabs() {
-  
+export default function LoginTabs(props) {
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const {handleEnterOTPOpen} = props; 
+
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleEnterOTP = () => {
+    handleClose();
+    handleEnterOTPOpen();
+  }
 
   return (
     <Box>
@@ -63,7 +76,7 @@ export default function LoginTabs() {
         <Box width={300} height={160} sx={{mt:-2}}>
           <LoginTabEmail/>
           <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-            <Button variant="contained" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+            <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Login
             </Button>
           </Box>
@@ -76,7 +89,9 @@ export default function LoginTabs() {
             <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log}/>
           </Box>
           <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
-            <EnterOTP/>
+              <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                Send OTP 
+              </Button>
           </Box>
         </Box> 
       </TabPanel>

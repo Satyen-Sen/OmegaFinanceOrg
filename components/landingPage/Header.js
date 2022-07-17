@@ -3,6 +3,7 @@ import {Navbar} from 'reactstrap';
 import { Box, Container, Stack } from '@mui/material';  
 import LoginDialog from '../login/LoginDialog'; 
 import LoginAsAdmin from '../login/LoginAsAdmin'; 
+import EnterOTP from '../login/EnterOTP';
 import CreateAccount from '../createAccount/CreateAccount';
 
 
@@ -38,6 +39,7 @@ const Header = () => {
             <img src="https://omegafinancegroup.com/wp-content/uploads/2020/07/Logo.png" width="80" height="40" alt="Omega Finance Group"/>
           <Box sx={{ml:'62%', mt:-5,}}>
             <Stack direction="row" spacing={2} sx={{display:'flex', alignContent:'flex-end',}}>
+              <EnterOTP open = {open} handleClose = {handleClose}/>
               <CreateAccount open = {open} handleClose = {handleClose}/>
               <LoginDialog handleCreateAccountOpen = {handleClickOpen}/> 
               <LoginAsAdmin/>

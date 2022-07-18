@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
 import { withStyles } from '@mui/styles';
+import EnterOTP from '../login/EnterOTP';
 import LoginTabEmail from './LoginTabEmail';
 import MuiPhoneNumber from "material-ui-phone-number";
 
@@ -92,6 +93,7 @@ export default function LoginTabs(props) {
               <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                 Send OTP 
               </Button>
+              <EnterOTP open = {open} handleClose = {handleClose}/>
           </Box>
         </Box> 
       </TabPanel>

@@ -41,17 +41,6 @@ export default function EnterOTP(props) {
 
     const [OTP, setOTP] = React.useState("");
 
-    // const [open, setOpen] = React.useState(false);
-
-    // const handleClickOpen = () => {
-    //     setOpen(true);
-    // };
-
-    // const handleClose = () => {
-    //     setOpen(false);
-    // };
-
-
   return (
     <div>
         <BootstrapDialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:12,}}}>

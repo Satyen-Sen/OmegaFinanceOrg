@@ -45,13 +45,13 @@ export default function CreateAccount(props) {
 
       <BootstrapDialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:12,}}}>
         <BootstrapDialogContent onClose={handleClose}>
-          <Box className="login-box" sx={{height:510, width:450,}}>
+          <Box sx={{height:520, width:450, display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
 
-            <FormControl className="illustration-wrapper" initialValues={{remember: true,}}>
+            <FormControl initialValues={{remember: true,}} sx={{display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
                 <Typography variant="h5" sx={{m:2, mt:4}}>Create an Account</Typography>  
 
                 <Box sx={{ display: 'flex', alignItems: 'flex-end', mb:1,}}>
-                  <PersonIcon sx={{color:'#11193F', mr:1, my: 0.5}} />
+                  <PersonIcon sx={{color:'#11193F', mr:1, my: 0.5}}/>
                   <TextField label="Name" variant="standard" sx={{width:248}} size="small"/>
                 </Box>       
                       
@@ -86,7 +86,7 @@ export default function CreateAccount(props) {
                   </Typography> 
                 </Box>
                 
-                <Box sx={{display:'flex', justifyContent:'center', width:275, m:1,}}>
+                <Box sx={{display:'flex', justifyContent:'center', width:275, m:1, mb:2,}}>
                   <Button variant="contained" href="#" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:120, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
                     Submit
                   </Button> 

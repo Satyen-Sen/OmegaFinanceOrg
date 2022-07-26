@@ -1,79 +1,45 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col, } from 'reactstrap';
-import Head from 'next/head';
-import { Typography, Box, Button } from '@mui/material'; 
+import React from "react";
+import { Box, Typography, Grid, Button } from '@mui/material'; 
 import { Player } from '@lottiefiles/react-lottie-player';
-
-function TextAnimation({title, listarray, desc,}) {
-    const [index, setIndex] = useState(0);
-  
-    useEffect(() => {
-      setTimeout(() => {
-        let i = (index + 1) % listarray.length;
-        setIndex(i);
-      }, 2000);
-    }, [index]);
-
-    return (
-        <div>        
-            <Head>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-            </Head>
-
-            <Box sx={{m:2, mt:12, }}>
-                <div className="left-title">
-                    <Typography variant="h4" sx={{mb:2, color:'#11193F'}}>{title}&nbsp;</Typography> 
-                    {listarray ? 
-                        <Typography variant="h4" sx={{mb:2, color:'#FDAA3C',}} className="animate__animated animate__fadeInDown animate__slow animate__infinite"> 
-                            {listarray[index]}
-                        </Typography> 
-                    : ""}
-                </div>
-                <p className="text-muted mb-4 pb-2">{desc}</p>
-            </Box>
-        </div>
-    );
-}
+import TextAnimation from "./TextAnimation";
 
 export default function Welcome() {
 
-  const description = "We help you see the world differently, discover opportunities you may never have imagined and achieve results that bridge what is with what can be.";
+  const description1 = "Omega Finance Group is an expert stock market trading and coaching institution with a proven track record in offering highly effective stock market trading ideas & financial planning services to a broad spectrum of clients. After our inception back in 2017 as a venture for helping out newbie stock investors, we have offered numerous clients recommendations and ideas that helped bag millions.";
+  const description2 = "We help you see the world differently, discover opportunities you may never have imagined and achieve results that bridge what is with what can be.";
   
   return (
-    <section className="section position-relative">
-      <Container>
-        <Row className="align-items-center">
-          <Col lg={6}> 
-            <div className="pr-lg-5">
+      <Box sx={{m:14}}>
 
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <div className="pr-lg-5">
               <Typography variant="h3" sx={{color:'#11193F', mb:4, fontSize:44,}}>Welcome to Omega Finance</Typography>
-              <p className="text-muted mb-4 pb-2">
-                Omega Finance Group is an expert stock market trading and coaching institution with a proven track record in offering highly effective stock market trading ideas & financial planning services to a broad spectrum of clients. After our inception back in 2017 as a venture for helping out newbie stock investors, we have offered numerous clients recommendations and ideas that helped bag millions. 
-              </p>
+              <p className="text-muted mb-4 pb-2">{description1}</p>
               <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                 Explore More
               </Button>
-
             </div>
-          </Col>
-          <Col lg={6}> 
-            <Player autoplay loop src="https://assets3.lottiefiles.com/packages/lf20_kuhijlvx.json" style={{ height: '400px', width: '400px' }}>
-            </Player>
-          </Col>  
-        </Row>
-        <Row className="align-items-center">
-          <Col lg={6}> 
-            <Player autoplay loop src="https://assets5.lottiefiles.com/private_files/lf30_tcuqw7ib.json" style={{ height: '400px', width: '400px' }}>
-            </Player>
-          </Col>
-          <Col lg={6}> 
-            <TextAnimation title="Learn & Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description}/>
+          </Grid>
+
+          <Grid item xs={6}>
+            <Player autoplay loop src="https://assets3.lottiefiles.com/packages/lf20_kuhijlvx.json" style={{ height: '400px', width: '400px' }}></Player>
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Player autoplay loop src="https://assets5.lottiefiles.com/private_files/lf30_tcuqw7ib.json" style={{ height: '400px', width: '400px' }}></Player>
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextAnimation title="Learn & Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description2}/>
             <Button variant="contained" href="#" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
               Contact Us
             </Button> 
-          </Col>  
-        </Row>
-      </Container> 
-    </section>
+          </Grid>        
+        </Grid>
+
+      </Box> 
   ); 
 }

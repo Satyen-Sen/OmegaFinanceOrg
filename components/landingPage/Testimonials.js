@@ -1,34 +1,17 @@
 import * as React from 'react';
-import { Card, CardHeader, CardContent, Avatar, Box, Rating, Typography } from '@mui/material'; 
+import { Box, Typography } from '@mui/material'; 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Keyboard, Pagination, Navigation } from "swiper";
+import { Keyboard, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import TestimonialCard from '../primary/TestimonialCard';
 
-
-function TestimonialCard() {
-
-  return (
-    <Card sx={{borderRadius:2, boxShadow:3, m:6,}}>
-      <CardHeader
-        avatar={<Avatar src="https://st4.depositphotos.com/4157265/41100/i/450/depositphotos_411005388-stock-photo-profile-picture-of-smiling-30s.jpg" sx={{ width:60, height:60,}}/>} 
-        subheader={<Rating name="size-large" defaultValue={5} size="large" />}
-      />
-      <CardContent>
-        <Box>
-          <Typography variant="body" color="text.secondary">It is a great platform for investment. Interactive and clean User Interface. Features like creating your own portfolio are great..I started investing in Mutual Funds.</Typography>
-        </Box>
-        <Box sx={{mt:3}}>
-          <Typography variant="h7" sx={{fontWeight:700}}>John Doe</Typography>
-        </Box>
-        <Box>
-          <Typography variant="body" sx={{fontSize:14}}>Product Manager, Google</Typography>
-        </Box>  
-      </CardContent>
-    </Card>
-  );
-}
+const cardArray = [
+  {avatar:'https://qph.cf2.quoracdn.net/main-qimg-54267778c97f83c195ad7b0efb64aaa9-lq', title:'Jim Morty', rating:5, position:'Product Manager, Amazon',}, 
+  {avatar:'https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg', title:'Brad Pitt', rating:4, position:'Senior Developer, Quora',}, 
+  {avatar:'https://www.stockvault.net//data/2008/04/28/104979/thumb16.jpg', title:'Arun Patel', rating:5, position:'Executive Manager, Metaverse',}, 
+];
 
 export default function Testimonials() {
   return (
@@ -41,17 +24,12 @@ export default function Testimonials() {
         </Box>
 
         <Swiper slidesPerView={3} spaceBetween={-40} slidesPerGroup={3} loop={true} keyboard={{enabled: true,}} loopFillGroupWithBlank={true} pagination={{clickable: true,}} navigation={true} modules={[Keyboard, Pagination, Navigation]}>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
-          <SwiperSlide> <TestimonialCard/>  </SwiperSlide>
+          {cardArray.map((cardArray) => (
+              <SwiperSlide> 
+                <TestimonialCard key={cardArray.title} avatar={cardArray.avatar} title={cardArray.title} rating={cardArray.rating} position={cardArray.position} rating={cardArray.rating}/>  
+              </SwiperSlide>
+            ))}
         </Swiper>
-
       </Box>
     </Box>
   );

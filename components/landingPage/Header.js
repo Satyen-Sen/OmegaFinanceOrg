@@ -10,7 +10,7 @@ import CreateAccount from '../createAccount/CreateAccount';
 const Header = () => {
 
   const [sticky, setSticky] = useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

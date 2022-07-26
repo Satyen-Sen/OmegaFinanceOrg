@@ -1,12 +1,15 @@
-import React from 'react'; 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-const LandingPage = dynamic(() => import('./LandingPage'), {ssr:false});
+const DynamicComponentsWithNoSSR = dynamic(
+  () => import('./LandingPage'), 
+  {ssr: false}
+);
 
-const Index = () => {
+function Home() {
   return (
-    <LandingPage/>
-  )
-}
+    <DynamicComponentsWithNoSSR/>
+  );
+};
 
-export default Index;
+export default Home; 
+

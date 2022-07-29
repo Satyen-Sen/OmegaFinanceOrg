@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Box, Typography, Stack } from '@mui/material';  
+import Image from 'next/image';
+import { Box, Typography, Stack } from '@mui/material'; 
+import Logo from '../../public/Logo.png'; 
 
 function Footer() {
   return (
@@ -7,7 +9,7 @@ function Footer() {
       <Box sx={{display:'flex', flexDirection:'row', ml:12, mr:12,}}>
         
           <Box sx={{width:400, mt:1,}}>
-            <img src="https://omegafinancegroup.com/wp-content/uploads/2020/07/Logo.png" width="140" height="70"  alt="Omega Finance Group"/>
+            <Image src={Logo} alt="Omega Finance Group" width={140} height={70}/>
             <p className="mt-4 mb-1"> 59 West, 46th Street, New York,</p>
             <p className="mb-4"> NY-10036, United States.</p>
             <Typography variant="body" sx={{textDecoration:'underline'}}>Contact Us</Typography>

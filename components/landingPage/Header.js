@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {Navbar} from 'reactstrap'; 
 import { Box, Container, Stack } from '@mui/material';  
 import LoginDialog from '../login/LoginDialog'; 
 import LoginAsAdmin from '../login/LoginAsAdmin'; 
 import EnterOTP from '../login/EnterOTP';
 import CreateAccount from '../createAccount/CreateAccount';
+import Logo from '../../public/Logo.png';
 
 
 const Header = () => {
@@ -36,7 +38,7 @@ const Header = () => {
       <Navbar light>
 
         <Container sx={{diaply:'flex'}}>
-            <img src="https://omegafinancegroup.com/wp-content/uploads/2020/07/Logo.png" width="80" height="40" alt="Omega Finance Group"/>
+            <Image src={Logo} alt="Omega Finance Group" width={80} height={40}/>
           <Box sx={{ml:'62%', mt:-5,}}>
             <Stack direction="row" spacing={2} sx={{display:'flex', alignContent:'flex-end',}}>
               <EnterOTP open = {open} handleClose = {handleClose}/>

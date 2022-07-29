@@ -1,16 +1,50 @@
 import * as React from 'react';
-import { Box, Typography } from '@mui/material'; 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Pagination, Navigation } from "swiper";
+import { Card, CardHeader, CardContent, Avatar, Rating, Box,Typography } from '@mui/material'; 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import TestimonialCard from '../primary/TestimonialCard';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Pagination, Navigation } from "swiper";
 
-const cardArray = [
-  {avatar:'https://qph.cf2.quoracdn.net/main-qimg-54267778c97f83c195ad7b0efb64aaa9-lq', title:'Jim Morty', rating:5, position:'Product Manager, Amazon',}, 
-  {avatar:'https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg', title:'Brad Pitt', rating:4, position:'Senior Developer, Quora',}, 
-  {avatar:'https://www.stockvault.net//data/2008/04/28/104979/thumb16.jpg', title:'Arun Patel', rating:5, position:'Executive Manager, Metaverse',}, 
+function TestimonialCard(props) {
+    return (
+        <Card sx={{borderRadius:2, boxShadow:3, m:6,}}>
+            <CardHeader
+                avatar={<Avatar src={props.avatar} sx={{ width:60, height:60,}}/>} 
+                subheader={<Rating defaultValue={props.rating} size="large" />}
+            />
+            <CardContent>
+                <Box>
+                    <Typography variant="body" color="text.secondary">
+                        It is a great platform for investment. Interactive and clean User Interface. Features like creating your own portfolio are great..I started investing in Mutual Funds.
+                    </Typography>
+                </Box>
+                <Box sx={{mt:3}}>
+                    <Typography variant="h7" sx={{fontWeight:700}}>{props.title}</Typography>
+                </Box>
+                <Box>
+                    <Typography variant="body" sx={{fontSize:14}}>{props.position}</Typography>
+                </Box>  
+            </CardContent>
+        </Card>
+    );
+}
+
+
+// Stock Profile Image used here for Demo
+const ProfileImg ="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+
+// User Testimonials/Reviews Details Array = reviewDetails 
+const reviewDetails = [
+  {avatar:ProfileImg, title:'Jerry Johnson', rating:5, position:'Retail Manager, Walmart',}, 
+  {avatar:ProfileImg, title:'Peter Smith', rating:4, position:'Executive Incharge, CVS Health',}, 
+  {avatar:ProfileImg, title:'Richard Joe', rating:3, position:'Technical Executive, AT&T',}, 
+  {avatar:ProfileImg, title:'Joseph Thompson', rating:4, position:'Senior Developer, Metaverse',}, 
+  {avatar:ProfileImg, title:'Walter Lewis', rating:5, position:'Area Manager, Ford Motors',}, 
+  {avatar:ProfileImg, title:'Carl Harris', rating:4, position:'Supply Incharge, Comcast Telecom',}, 
+  {avatar:ProfileImg, title:'Andrew Scott', rating:3, position:'Executive Engineer, Philips',}, 
+  {avatar:ProfileImg, title:'Kevin Brian', rating:4, position:'Branch Manager, AMC Bank',}, 
+  {avatar:ProfileImg, title:'Frank Taylor', rating:5, position:'Product Designer, General Motors',}, 
 ];
 
 export default function Testimonials() {
@@ -24,9 +58,9 @@ export default function Testimonials() {
         </Box>
 
         <Swiper slidesPerView={3} spaceBetween={-40} slidesPerGroup={3} loop={true} keyboard={{enabled: true,}} loopFillGroupWithBlank={true} pagination={{clickable: true,}} navigation={true} modules={[Keyboard, Pagination, Navigation]}>
-          {cardArray.map((cardArray) => (
+          {reviewDetails.map((reviewDetails) => (
               <SwiperSlide> 
-                <TestimonialCard key={cardArray.title} avatar={cardArray.avatar} title={cardArray.title} rating={cardArray.rating} position={cardArray.position} rating={cardArray.rating}/>  
+                <TestimonialCard key={reviewDetails.title} avatar={reviewDetails.avatar} title={reviewDetails.title} rating={reviewDetails.rating} position={reviewDetails.position} rating={reviewDetails.rating}/>  
               </SwiperSlide>
             ))}
         </Swiper>

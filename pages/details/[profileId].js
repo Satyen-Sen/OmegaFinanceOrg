@@ -74,7 +74,7 @@ export default function ProfileIdDetails() {
 
             <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, backgroundColor:'#F5F5F5'}}>
                 <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, backgroundColor:'#FFFFFF', width:'80%', borderRadius:6,}}>
-
+                <h6>Profile Details for {profileId}</h6>     
                     <Card key={profileId} sx={{borderRadius:6, p:2, width:'70%',}}>
                         <CardHeader 
                             avatar={<Avatar src="https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg" sx={{width:150, height:150, borderRadius:4,}}/>} 
@@ -111,9 +111,9 @@ export default function ProfileIdDetails() {
 
                     <Box sx={{display:'flex', flexDirection:'column', alignItems:'left', width:'100%', m:4,}}>
                         <Typography variant="h4" color="#11193F" sx={{fontWeight:700, m:2, fontFamily:'poppins',}}>
-                            Subscription Plans
-                        </Typography>     
-                        <h6>Profile Details for {profileId}</h6>      
+                            Subscription Plans 
+                        </Typography>      
+                         
                     </Box>
                     <Box>
                         <Swiper slidesPerView={3} spaceBetween={10} slidesPerGroup={3} loop={true} keyboard={{enabled: true,}} loopFillGroupWithBlank={true} pagination={{clickable: true,}} navigation={true} modules={[Keyboard, Pagination, Navigation]}>

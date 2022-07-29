@@ -1,18 +1,14 @@
 import React from "react";
 import Head from 'next/head';
-import { useRouter } from 'next/router'; 
 import { Card, CardHeader, CardContent, Divider, Stack, Avatar, Grid, Button, Box, Typography } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import DiamondTwoToneIcon from '@mui/icons-material/DiamondTwoTone';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-// import stockAdvisors from '../../stockAdvisors.json';
-// let details = stockAdvisors.filter(stockAdvisors => stockAdvisors.id == {profileId});
-
 
 function InvestmentPlansCard (props) {
     return (
-        <Card sx={{borderRadius:6, width:400, p:2, m:2, backgroundColor:'#FCFCFC',}}>
+        <Card sx={{borderRadius:6, width:450, height:500, p:2, m:2, backgroundColor:'#FCFCFC',}}>
             <Grid container spacing={2} sx={{width:'110%', mt:-2}}>
                 <Grid item xs={8}>
                     <Typography variant="h5" color="#11193F" sx={{fontWeight:700, m:2, fontFamily:'poppins',}}>
@@ -53,9 +49,6 @@ function InvestmentPlansCard (props) {
 
 export default function ProfileIdDetails() {
 
-    const router = useRouter();
-    const profileId = router.query.profileId;
-
     return (
         <div>
             <Head>
@@ -71,7 +64,7 @@ export default function ProfileIdDetails() {
             <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, backgroundColor:'#F5F5F5'}}>
                 <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, backgroundColor:'#FFFFFF', width:'80%', borderRadius:6,}}>
 
-                    <Card key={profileId} sx={{borderRadius:6, p:2, width:'70%',}}>
+                    <Card sx={{borderRadius:6, p:2, width:'70%',}}>
                         <CardHeader 
                             avatar={<Avatar src="https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg" sx={{width:150, height:150, borderRadius:4,}}/>} 
                             title={<Typography variant="body" color="#11193F" sx={{fontWeight:700, m:2, fontSize:40,}}>John Williams</Typography>} 
@@ -108,18 +101,16 @@ export default function ProfileIdDetails() {
                     <Box sx={{display:'flex', flexDirection:'column', alignItems:'left', width:'100%', m:4,}}>
                         <Typography variant="h4" color="#11193F" sx={{fontWeight:700, m:2, fontFamily:'poppins',}}>
                             Subscription Plans
-                        </Typography>     
-                        <h6>Profile Details for {profileId}</h6>      
+                        </Typography> 
+                        <Stack spacing={0} direction="row">
+                            <InvestmentPlansCard type="Basics" duration="3 Month" price="$149"/>
+                            <InvestmentPlansCard type="Advanced" duration="6 Month" price="$249"/>
+                        </Stack>    
                     </Box>
                     
-                    <InvestmentPlansCard type="Basics" duration="3 Month" price="$149"/>
-                    <InvestmentPlansCard type="Advanced" duration="6 Month" price="$249"/>
-                    <InvestmentPlansCard type="Advanced" duration="6 Month" price="$249"/>
-
                     <Box sx={{m:2, p:2,}}>
-                    </Box>
-
-                    
+                        <h5>dummy text</h5>
+                    </Box> 
                 </Box>    
             </Box>
         </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, CardHeader, CardContent, Avatar, Rating, Box,Typography } from '@mui/material'; 
+import { Card, CardHeader, CardContent, Avatar, Rating, Box, Typography } from '@mui/material'; 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

@@ -1,9 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import { Card, Stack, Avatar, Grid, Button, Box, Typography } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import ProfileCard from '../../components/profileDetails/ProfileCard';
-import InvestmentPlans from '../../components/profileDetails/InvestmentPlans';
-import Testimonials from '../../components/primary/Testimonials';
+import SubscriptionPlans from '../../components/profileDetails/SubscriptionPlans';
+import ConsultancyCards from '../../components/profileDetails/ConsultancyCards';
+import Certificates from '../../components/profileDetails/Certificates';
+import Ratings from '../../components/profileDetails/Ratings';
+import OrganisationDetails from '../../components/profileDetails/OrganisationDetails';
+import OtherAdvisors from '../../components/profileDetails/OtherAdvisors';
+
 
 export default function DetailPage() {
     return (
@@ -26,8 +31,19 @@ export default function DetailPage() {
                             title="John Williams" category="Premium" rating="250" year="5" 
                         />
                     </Box>
-                    <InvestmentPlans/>
-                    <Testimonials Title="Testimonials"/>
+                    <SubscriptionPlans/>
+                    <ConsultancyCards/>
+                    <Certificates/>
+                    <Ratings/>
+                    <Box sx={{width:'100%', display:'flex', flexDirection:'column', alignItems:'center', mt:8, mb:8,}}>
+                        <OrganisationDetails 
+                            avatar="https://t4.ftcdn.net/jpg/03/36/74/97/360_F_336749776_JlC1FjERlhyl4OqgrZoon1XVvDHut2Q2.jpg"
+                            title="Green Ville Organisation"
+                            rating="5"
+                        />
+                    </Box>
+                    <Divider sx={{borderWidth:2, backgroundColor:'#808080', m:-4, mt:16,}}/>
+                    <OtherAdvisors/>
                 </Box>
             </Box>
         </div>

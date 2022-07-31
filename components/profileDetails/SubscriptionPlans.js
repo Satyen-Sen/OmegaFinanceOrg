@@ -10,7 +10,7 @@ import { Keyboard, Pagination, Navigation } from "swiper";
 
 function InvestmentPlansCard (props) {
     return (
-        <Card sx={{borderRadius:6, width:460, p:2, ml:5, mr:5, mb:5, backgroundColor:'#F6F6F7',}}>
+        <Card sx={{borderRadius:6, width:460, p:2, m:5, mt:0, backgroundColor:'#F6F6F7',}}>
             <Grid container spacing={2} sx={{width:'110%', height:'15%',}}>
                 <Grid item xs={8}> 
                     <Box sx={{mt:0.6}}> 
@@ -55,7 +55,7 @@ function InvestmentPlansCard (props) {
     );
 };
 
-export default function InvestmentPlans() {
+export default function SubscriptionPlans() {
     return (
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'left', width:'100%', mt:12,}}>
             <Typography variant="body" color="#11193F" sx={{fontWeight:600, fontSize:30, mb:2,}}>

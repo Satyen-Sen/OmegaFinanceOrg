@@ -23,7 +23,7 @@ const BootstrapDialogContent = (props) => {
       {children}
       {onClose ? (
         <IconButton aria-label="close" onClick={onClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
-          <CloseIcon />
+          <CloseIcon/>
         </IconButton>
       ) : null}
     </DialogContent>

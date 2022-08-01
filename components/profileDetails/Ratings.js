@@ -12,7 +12,7 @@ function TestimonialsCard(props) {
         <Card sx={{borderRadius:2, boxShadow:3, m:6,}}>
             <CardHeader
                 avatar={<Avatar src={props.avatar} sx={{ width:60, height:60,}}/>} 
-                subheader={<Rating defaultValue={props.rating} size="large" />}
+                subheader={<Rating defaultValue={props.rating} size="large" readOnly/>}
             />
             <CardContent>
                 <Box>

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {Navbar} from 'reactstrap'; 
-import { Box, Container, Stack } from '@mui/material';  
+import { Box, Container, Stack } from '@mui/material'; 
+import Logo from '../../public/Logo.png'; 
 import LoginDialog from '../login/LoginDialog'; 
 import LoginAsAdmin from '../login/LoginAsAdmin'; 
 import EnterOTP from '../login/EnterOTP';
+import LoginButton from '../modal/LoginButton';
 import CreateAccount from '../createAccount/CreateAccount';
-import Logo from '../../public/Logo.png';
 
 
 const Header = () => {
@@ -43,7 +44,8 @@ const Header = () => {
             <Stack direction="row" spacing={2} sx={{display:'flex', alignContent:'flex-end',}}>
               <EnterOTP open = {open} handleClose = {handleClose}/>
               <CreateAccount open = {open} handleClose = {handleClose}/>
-              <LoginDialog handleCreateAccountOpen = {handleClickOpen}/> 
+              <LoginButton/>
+              {/* <LoginDialog handleCreateAccountOpen = {handleClickOpen}/>  */}
               <LoginAsAdmin/>
             </Stack>
           </Box>

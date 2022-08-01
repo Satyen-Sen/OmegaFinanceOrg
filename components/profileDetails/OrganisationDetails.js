@@ -12,7 +12,7 @@ export default function OrganisationDetails(props) {
                     <Typography variant="body" color="#11193F" sx={{fontWeight:600, fontSize:38,}}>
                         {props.title}
                     </Typography> 
-                    <Rating defaultValue={props.rating} size="large"/>
+                    <Rating defaultValue={props.rating} size="large" readOnly/>
                     <Stack spacing={2} direction="row" sx={{mt:2, mb:2,}}>
                         <Card sx={{display:'flex', justifyContent:'center', backgroundColor:'#B4E7CE', boxShadow:1, borderRadius:2, p:1, width:240,}}>
                             <Typography variant="h4" color="#1BB56B" sx={{fontSize:18, borderRadius:2, fontWeight:600, fontFamily:'poppins',}}>

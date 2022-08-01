@@ -13,7 +13,7 @@ export default function LandingPage() {
             <Head>
                 <title>Omega Finance</title>
                 <meta name="description" content="Built in India with Next JS"/>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/LogoFavIcon.png" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>

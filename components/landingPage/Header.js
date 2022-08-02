@@ -5,6 +5,7 @@ import { Box, Container, Stack } from '@mui/material';
 import Logo from '../../public/Logo.png'; 
 import LoginButton from '../modal/LoginButton';
 import InvestorLogin from '../modal/InvestorLogin';
+import AdvisorLogin from '../modal/AdvisorLogin';
 
 import LoginDialog from '../login/LoginDialog';
 import LoginAsAdmin from '../login/LoginAsAdmin'; 
@@ -19,7 +20,6 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
-
   const handleScroll = () => {
     if (window.scrollY > 90) {
       setSticky(true); 
@@ -42,13 +42,13 @@ const Header = () => {
         <Container sx={{diaply:'flex'}}>
             <Image src={Logo} alt="Omega Finance Group" width={80} height={40}/>
           <Box sx={{ml:'62%', mt:-5,}}>
-            <Stack direction="row" spacing={2} sx={{display:'flex', alignContent:'flex-end',}}>
-              <LoginButton handleInvestorLoginOpen={handleClickOpen}/>
+            <Stack direction="row" spacing={1} sx={{display:'flex', alignContent:'flex-end',}}>
+              <LoginButton handleInvestorLoginOpen={handleClickOpen} handleAdvisorLoginOpen={handleClickOpen}/>
               <InvestorLogin open={open} handleClose={handleClose}/>
-
+              <AdvisorLogin open={open} handleClose={handleClose}/>
+              <LoginAsAdmin/>
               {/* <CreateAccount open={open} handleClose = {handleClose}/>
               <LoginDialog handleCreateAccountOpen = {handleClickOpen}/>  */}
-              <LoginAsAdmin/>
             </Stack>
           </Box>
         </Container>  

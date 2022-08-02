@@ -33,17 +33,24 @@ function UserCard(props){
 };
 
 export default function LoginButton(props) {
-    const {handleInvestorLoginOpen} = props;
+    const {handleInvestorLoginOpen, handleAdvisorLoginOpen} = props;
+
     const [open, setOpen] = React.useState(false);
+
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false);
     };
+    
     const handleInvestorLogin = () => {
         handleClose();
         handleInvestorLoginOpen();
+    }
+    const handleAdvisorLogin = () => {
+        handleClose();
+        handleAdvisorLoginOpen();
     }
 
     return (
@@ -65,7 +72,7 @@ export default function LoginButton(props) {
                     </Typography>   
                     <Stack spacing={2} direction="row" sx={{mt:2}}>
                         <UserCard title="Investor" details={detail1} image={User1} link={handleInvestorLogin}/>
-                        <UserCard title="Advisor" details={detail2} image={User2} link={handleInvestorLogin}/>
+                        <UserCard title="Advisor" details={detail2} image={User2} link={handleAdvisorLogin}/>
                     </Stack>
                 </Box>
             </Dialog>

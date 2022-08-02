@@ -8,16 +8,16 @@ import googleIcon from '../../public/images/google.png';
 import appleIcon from '../../public/images/apple.png';
 
 
-export default function InvestorLogin(props) {
+export default function AdvisorLogin(props) {
     const {open, handleClose} = props;
     return (
         <div>
-            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16,}}}>
+            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16, height:200,}}}>
                 <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
                     <CloseIcon/>
                 </IconButton>
                 <Box sx={{height:510, width:450, display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
-                    <Typography variant="h5" sx={{mt:1, mb:3,}}>Login with your : Investor</Typography>  
+                    <Typography variant="h5" sx={{m:1}}>Login with your : Advisor</Typography>  
                     <LoginTabs/>
                     <Divider variant="middle" sx={{borderWidth:2, backgroundColor:'#606060', m:2, width:'116%',}}/>
                     <Typography variant="body" sx={{mb:2}}>or Continue with</Typography>

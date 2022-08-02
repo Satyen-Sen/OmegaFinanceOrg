@@ -1,73 +1,90 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Typography, Box, Tab, Tabs, Button, } from '@mui/material';
-import { withStyles } from '@mui/styles';
-// import EnterOTP from '../login/EnterOTP';
-import EmailLoginTab from './EmailLoginTab';
+import {Col, Nav, Row, Tab} from 'react-bootstrap';
 import MuiPhoneNumber from "material-ui-phone-number";
+import { Box, Button, IconButton, TextField, Input, InputLabel, InputAdornment, FormControl, } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import EmailIcon from '@mui/icons-material/Email';
+import KeyRoundedIcon from '@mui/icons-material/KeyRounded';
 
-const CustomTab = withStyles({root:{fontWeight:600}})(Tab);
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
+function EmailTab(){
+    const [values, setValues] = React.useState({showPassword:false});
+    const handlePassword = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+    };
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
     return (
-        <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} {...other}>
-            {value === index && (
-                <Box sx={{p:3}}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
+        <Box width={300} height={160}>
+            <Box sx={{ display: 'flex', alignItems: 'flex-end', m: 1,}}>
+                <EmailIcon sx={{color:'#11193F', mr:1, my: 0.5}}/>
+                <TextField label="Email" variant="standard" sx={{width:215}} size="small"/>
+            </Box>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', mt:-2,}}>
+                <KeyRoundedIcon sx={{color:'#11193F', ml:1, my:3.5,}}/>
+                <FormControl sx={{ m: 1, width:215,}} variant="standard">
+                    <InputLabel>Password</InputLabel>
+                    <Input type={values.showPassword ? 'text' : 'password'} value={values.password} onChange={handlePassword('password')} size="small"
+                    endAdornment={ 
+                        <InputAdornment position="end">
+                        <IconButton onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
+                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                        </InputAdornment>
+                    }/>
+                </FormControl>
+            </Box> 
+            <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
+                <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                    Login
+                </Button>
+            </Box>
+        </Box>
     );
 };
 
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+function PhoneTab(){
+    return(
+        <Box width={300} height={136}>
+            <Box sx={{display:'flex', justifyContent:'center', mt:4,}}>
+                <MuiPhoneNumber defaultCountry={"ca"}/>
+            </Box>
+            <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
+                <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                    Send OTP 
+                </Button>
+            </Box>
+        </Box> 
+    );
 };
 
-function a11yProps(index) {
-  return {id: `simple-tab-${index}`, 'aria-controls': `simple-tabpanel-${index}`,};
-}
-
 export default function LoginTabs() {
-    const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
     return (
         <Box>
-            <Tabs value={value} onChange={handleChange} tabItemContainerStyle={{height:10}}> 
-                <CustomTab label="Email" {...a11yProps(0)} sx={{borderRadius:2, borderColor:'inherit', border:1, m:1, mr:2, width:150,}}/>
-                <CustomTab label="Phone" {...a11yProps(1)} sx={{borderRadius:2, borderColor:'inherit', border:1, m:1, ml:2, width:150,}}/>
-            </Tabs>
-
-            <TabPanel value={value} index={0}>
-                <Box width={300} height={134} sx={{mt:-2}}>
-                    <EmailLoginTab/>
-                    <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-                        <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                            Login
-                        </Button>
-                    </Box>
-                </Box>
-            </TabPanel>
-
-            <TabPanel value={value} index={1}>
-                <Box width={300} height={110} sx={{mt:-2}}>
-                    <Box sx={{display:'flex', justifyContent:'center', mt:4,}}>
-                        <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log}/>
-                    </Box>
-                    <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
-                        <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                            Send OTP 
-                        </Button>
-                    </Box>
-                </Box> 
-            </TabPanel>
+            <Tab.Container defaultActiveKey="first">
+                <Col>
+                    <Row>
+                        <Nav variant="pills" justify>
+                            <Nav.Item><Nav.Link eventKey="first">Email</Nav.Link></Nav.Item>&emsp;
+                            <Nav.Item><Nav.Link eventKey="second">Phone</Nav.Link></Nav.Item>
+                        </Nav>
+                    </Row>
+                    <Row>
+                        <Tab.Content>
+                            <Tab.Pane eventKey="first"><EmailTab/></Tab.Pane>
+                            <Tab.Pane eventKey="second"><PhoneTab/></Tab.Pane>
+                        </Tab.Content>
+                    </Row>
+                </Col>
+            </Tab.Container>
         </Box>
     );
 };

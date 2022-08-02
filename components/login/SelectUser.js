@@ -43,9 +43,9 @@ export default function CreateAccount(props) {
   return (
     <div>
 
-      <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
-        <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
-          <Box className="login-box" sx={{height:510, width:450,}}>
+      <BootstrapDialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:12,}}}>
+        <BootstrapDialogContent onClose={handleClose}>
+          <Box sx={{height:510, width:450,}}>
 
             <FormControl className="illustration-wrapper" initialValues={{remember: true,}}>
                 <Typography variant="h5" sx={{m:2, mt:4}}>Select User Type</Typography>  

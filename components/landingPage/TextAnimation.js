@@ -19,14 +19,14 @@ export default function TextAnimation({title, listarray, desc,}) {
             </Head>
 
             <Box sx={{m:2, mt:12, }}>
-                <div className="left-title">
+                <Box>
                     <Typography variant="h4" sx={{mb:2, color:'#11193F'}}>{title}&nbsp;</Typography> 
                     {listarray ? 
                         <Typography variant="h4" sx={{mb:2, color:'#FDAA3C',}} className="animate__animated animate__fadeInDown animate__slow animate__infinite"> 
                             {listarray[index]}
                         </Typography> 
                     : ""}
-                </div>
+                </Box>
                 <p className="text-muted mb-4 pb-2">{desc}</p>
             </Box>
         </div>

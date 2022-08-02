@@ -1,16 +1,28 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Box, Divider } from '@mui/material';
-import ProfileCard from '../../components/profileDetails/ProfileCard';
-import SubscriptionPlans from '../../components/profileDetails/SubscriptionPlans';
-import ConsultancyCards from '../../components/profileDetails/ConsultancyCards';
-import Certificates from '../../components/profileDetails/Certificates';
-import Ratings from '../../components/profileDetails/Ratings';
-import OrganisationDetails from '../../components/profileDetails/OrganisationDetails';
-import OtherAdvisors from '../../components/profileDetails/OtherAdvisors';
+import ProfileCard from '../../../components/profileDetails/ProfileCard';
+import SubscriptionPlans from '../../../components/profileDetails/SubscriptionPlans';
+import ConsultancyCards from '../../../components/profileDetails/ConsultancyCards';
+import Certificates from '../../../components/profileDetails/Certificates';
+import Ratings from '../../../components/profileDetails/Ratings';
+import OrganisationDetails from '../../../components/profileDetails/OrganisationDetails';
+import OtherAdvisors from '../../../components/profileDetails/OtherAdvisors';
+import stockAdvisors from '../../../stockAdvisors.json';
 
 
 export default function DetailPage() {
+    const Router = useRouter();
+    const { slug } = Router.query;
+    const [data, setData] = React.useState(null);
+
+    useEffect(()=>{
+        if(!slug) return;
+        let idx = stockAdvisors.findIndex(e => e.slug === slug);
+        setData(stockAdvisors[idx]);
+    },[slug])
+    
     return (
         <div style={{margin:0}}>
             <Head>
@@ -28,7 +40,7 @@ export default function DetailPage() {
                     <Box sx={{width:'100%', display:'flex', flexDirection:'column', alignItems:'center',}}>
                         <ProfileCard 
                             avatar="https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"
-                            title="John Williams" category="Premium" rating="250" year="5" 
+                            title={data?.title || '---'} category="Premium" rating="250" year="5" 
                         />
                     </Box>
                     <SubscriptionPlans/>

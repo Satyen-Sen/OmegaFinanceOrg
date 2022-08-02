@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link'; 
 import {Col, Nav, Row, Tab} from 'react-bootstrap';
 import MuiPhoneNumber from "material-ui-phone-number";
 import { Box, Button, IconButton, TextField, Input, InputLabel, InputAdornment, FormControl, } from '@mui/material';
@@ -8,7 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import KeyRoundedIcon from '@mui/icons-material/KeyRounded';
 
 
-function EmailTab(){
+function EmailTab(props){
     const [values, setValues] = React.useState({showPassword:false});
     const handlePassword = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -43,9 +44,11 @@ function EmailTab(){
                 </FormControl>
             </Box> 
             <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-                <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                    Login
-                </Button>
+                <Link href={props.link}>
+                    <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                        Login
+                    </Button>
+                </Link>
             </Box>
         </Box>
     );
@@ -66,7 +69,7 @@ function PhoneTab(){
     );
 };
 
-export default function LoginTabs() {
+export default function LoginTabs(props) {
     return (
         <Box>
             <Tab.Container defaultActiveKey="first">
@@ -79,7 +82,7 @@ export default function LoginTabs() {
                     </Row>
                     <Row>
                         <Tab.Content>
-                            <Tab.Pane eventKey="first"><EmailTab/></Tab.Pane>
+                            <Tab.Pane eventKey="first"><EmailTab link={props.target}/></Tab.Pane>
                             <Tab.Pane eventKey="second"><PhoneTab/></Tab.Pane>
                         </Tab.Content>
                     </Row>

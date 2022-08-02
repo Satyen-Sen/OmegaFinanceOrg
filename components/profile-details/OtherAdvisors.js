@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link'; 
 import { Card, Stack, Avatar, Grid, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import "swiper/css";
@@ -51,7 +52,9 @@ export default function OtherAdvisors() {
                                             </Grid>
                                         </Grid>
                                         <Box sx={{m:4, mb:0}}>
-                                            <SubscribeButton variant="outlined" sx={{width:'100%'}}> View Profile / Subscribe </SubscribeButton>                                            
+                                            <Link href={`/profile-details/${item.slug}`}>
+                                                <SubscribeButton variant="outlined" sx={{width:'100%'}}> View Profile / Subscribe </SubscribeButton>
+                                            </Link>                                            
                                         </Box>
                                     </Box>
                                 </Card>

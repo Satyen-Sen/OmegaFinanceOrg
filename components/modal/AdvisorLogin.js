@@ -12,13 +12,13 @@ export default function AdvisorLogin(props) {
     const {open, handleClose} = props;
     return (
         <div>
-            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16, height:200,}}}>
+            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16,}}}>
                 <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
                     <CloseIcon/>
                 </IconButton>
                 <Box sx={{height:510, width:450, display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
-                    <Typography variant="h5" sx={{m:1}}>Login with your : Advisor</Typography>  
-                    <LoginTabs/>
+                    <Typography variant="h5" sx={{m:1}}>Login with your : </Typography>  
+                    <LoginTabs target="/advisor/"/>
                     <Divider variant="middle" sx={{borderWidth:2, backgroundColor:'#606060', m:2, width:'116%',}}/>
                     <Typography variant="body" sx={{mb:2}}>or Continue with</Typography>
                     <Stack spacing={2} direction="row">

@@ -57,7 +57,7 @@ export default function AllStockAdvisors() {
                                             </Grid>
                                         </Grid>
                                         <Box sx={{m:4, mb:0}}>
-                                            <Link href="/details">
+                                            <Link href={`/profile-details/${item.slug}`}>
                                                 <SubscribeButton variant="outlined" sx={{width:'100%'}}> View Profile / Subscribe </SubscribeButton>
                                             </Link>                                                
                                         </Box>

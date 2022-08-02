@@ -17,8 +17,8 @@ export default function InvestorLogin(props) {
                     <CloseIcon/>
                 </IconButton>
                 <Box sx={{height:510, width:450, display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
-                    <Typography variant="h5" sx={{mt:1, mb:3,}}>Login with your : Investor</Typography>  
-                    <LoginTabs/>
+                    <Typography variant="h5" sx={{mt:1, mb:3,}}>Login with your : </Typography>  
+                    <LoginTabs target="/investor/"/>
                     <Divider variant="middle" sx={{borderWidth:2, backgroundColor:'#606060', m:2, width:'116%',}}/>
                     <Typography variant="body" sx={{mb:2}}>or Continue with</Typography>
                     <Stack spacing={2} direction="row">

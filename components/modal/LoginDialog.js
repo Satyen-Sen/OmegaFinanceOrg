@@ -32,7 +32,7 @@ function UserCard(props){
     );
 };
 
-export default function LoginButton(props) {
+export default function LoginDialog(props) {
     const {handleInvestorLoginOpen, handleAdvisorLoginOpen} = props;
 
     const [open, setOpen] = React.useState(false);

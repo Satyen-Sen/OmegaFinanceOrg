@@ -54,7 +54,7 @@ export default function PremiumAdvisors() {
                                             We at Omega Finance Group, focus on providing the best financial planning services to our clients for their investment.
                                         </Typography>
                                         <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-                                            <Link href="/details/">
+                                            <Link href={`/profile-details/${item.slug}`}>
                                                 <SubscribeButton variant="outlined" sx={{mt:4, mb:1,}}>
                                                     View Profile / Subscribe
                                                 </SubscribeButton>

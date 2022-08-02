@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Box, Divider } from '@mui/material';
-import ProfileCard from '../../../components/profileDetails/ProfileCard';
-import SubscriptionPlans from '../../../components/profileDetails/SubscriptionPlans';
-import ConsultancyCards from '../../../components/profileDetails/ConsultancyCards';
-import Certificates from '../../../components/profileDetails/Certificates';
-import Ratings from '../../../components/profileDetails/Ratings';
-import OrganisationDetails from '../../../components/profileDetails/OrganisationDetails';
-import OtherAdvisors from '../../../components/profileDetails/OtherAdvisors';
+import ProfileCard from '../../../components/profile-details/ProfileCard';
+import SubscriptionPlans from '../../../components/profile-details/SubscriptionPlans';
+import ConsultancyCards from '../../../components/profile-details/ConsultancyCards';
+import Certificates from '../../../components/profile-details/Certificates';
+import Ratings from '../../../components/profile-details/Ratings';
+import OrganisationDetails from '../../../components/profile-details/OrganisationDetails';
+import OtherAdvisors from '../../../components/profile-details/OtherAdvisors';
 import stockAdvisors from '../../../stockAdvisors.json';
 
 

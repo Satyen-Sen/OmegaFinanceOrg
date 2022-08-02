@@ -21,7 +21,7 @@ const BootstrapDialogContent = (props) => {
     <DialogContent {...other} >
       {children}
       {onClose ? (
-        <IconButton aria-label="close" onClick={onClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
+        <IconButton onClick={onClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -42,7 +42,6 @@ export default function CreateAccount(props) {
 
   return (
     <div>
-
       <BootstrapDialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:12,}}}>
         <BootstrapDialogContent onClose={handleClose}>
           <Box sx={{height:520, width:450, display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
@@ -77,7 +76,7 @@ export default function CreateAccount(props) {
                   <Typography variant="h6" sx={{fontSize:18, fontWeight:600, color:'#505050', mt:-1.8, mb:1.8,}}>Upload Documents : &nbsp;</Typography>
                   <label>
                     <Input multiple type="file" hidden/>
-                    <Button variant="outlined" component="span" sx={{textTransform:'capitalize', mt:-2.8}}>Browse</Button>
+                    <Button variant="outlined" component="span" sx={{textTransform:'none', mt:-2.8}}>Browse</Button>
                   </label> 
                 </Box>
                 <Box sx={{display:'flex', width:275, mt:-2.8,}}>
@@ -87,7 +86,7 @@ export default function CreateAccount(props) {
                 </Box>
                 
                 <Box sx={{display:'flex', justifyContent:'center', width:275, m:1, mb:2,}}>
-                  <Button variant="contained" href="#" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:120, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
+                  <Button variant="contained" href="#" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:120, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
                     Submit
                   </Button> 
                 </Box>

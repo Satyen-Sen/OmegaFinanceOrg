@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { Grid, FormControl, Typography, Box, Chip, Divider,Link, Button, Dialog, DialogContent, IconButton, } from '@mui/material'; 
 import LoginTabs from './LoginTabs';
@@ -22,7 +22,7 @@ const BootstrapDialogContent = (props) => {
     <DialogContent {...other} >
       {children}
       {onClose ? (
-        <IconButton aria-label="close" onClick={onClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
+        <IconButton onClick={onClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
           <CloseIcon/>
         </IconButton>
       ) : null}
@@ -53,19 +53,19 @@ export default function LoginDialog(props) {
 
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
+      <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'none', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
         Login/Register
       </Button>
-      <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
-        <BootstrapDialogContent id="customized-dialog-title" onClose={handleClose}>
-          <Box className="login-box" sx={{height:510, width:450,}}>
+      <BootstrapDialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:12,}}}>
+        <BootstrapDialogContent onClose={handleClose}>
+          <Box sx={{height:510, width:450,}}>
             <FormControl initialValues={{remember: true,}} sx={{display:'flex', flexDirection:'coloumn', justifyContent:'center', alignItems:'center',}}>
 
                 <Typography variant="h5" sx={{m:2, mt:4}}>Login with:</Typography>  
                 <LoginTabs/>
                 <Grid container spacing={2} sx={{width:'78%', mb:3,}}>
                     <Grid item xs>
-                        <Button variant="text" onClick={handleCreateAccount} sx={{textTransform:'capitalize'}}>
+                        <Button variant="text" onClick={handleCreateAccount} sx={{textTransform:'none'}}>
                           <Link href="#" variant="body2">Create an Account</Link>
                         </Button>
                     </Grid>

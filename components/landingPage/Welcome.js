@@ -16,7 +16,7 @@ export default function Welcome() {
             <div className="pr-lg-5">
               <Typography variant="h3" sx={{color:'#11193F', mb:4, fontSize:44,}}>Welcome to Omega Finance</Typography>
               <p className="text-muted mb-4 pb-2">{description1}</p>
-              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+              <Button variant="contained" href="https://omegafinancegroup.com/about-us/" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                 Explore More
               </Button>
             </div>
@@ -34,7 +34,7 @@ export default function Welcome() {
 
           <Grid item xs={6}>
             <TextAnimation title="Learn & Invest in" listarray={["Stocks","Mutual Funds","Digital Gold","FDs"]} desc={description2}/>
-            <Button variant="contained" href="#" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+            <Button variant="contained" href="#" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Contact Us
             </Button> 
           </Grid>        

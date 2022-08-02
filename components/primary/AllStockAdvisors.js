@@ -11,9 +11,9 @@ import stockAdvisors from '../../stockAdvisors.json';
 
 let details = stockAdvisors.filter(stockAdvisors => stockAdvisors.category == "basic");
 
-const DetailsButton = styled(Button)({textTransform:'capitalize', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:125, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
-const RepresentativeButton = styled(Button)({textTransform:'capitalize', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:259, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
-const SubscribeButton = styled(Button)({textTransform:'capitalize', fontSize:16, borderRadius:20, fontFamily: 'poppins', fontWeight:800, color:'#FDAA3C', borderColor:'#FDAA3C', '&:hover': {borderColor:'#FDAA3C', backgroundColor:'#FDDDB2',}});
+const DetailsButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:125, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const RepresentativeButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:259, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const SubscribeButton = styled(Button)({textTransform:'none', fontSize:16, borderRadius:20, fontFamily: 'poppins', fontWeight:800, color:'#FDAA3C', borderColor:'#FDAA3C', '&:hover': {borderColor:'#FDAA3C', backgroundColor:'#FDDDB2',}});
 
 
 export default function AllStockAdvisors() {

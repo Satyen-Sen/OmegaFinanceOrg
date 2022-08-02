@@ -77,7 +77,7 @@ export default function LoginTabs(props) {
         <Box width={300} height={160} sx={{mt:-2}}>
           <LoginTabEmail/>
           <Box sx={{display:'flex', justifyContent:'center', p:2, pt:0,}}>
-            <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+            <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
               Login
             </Button>
           </Box>
@@ -90,10 +90,10 @@ export default function LoginTabs(props) {
             <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log}/>
           </Box>
           <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
-              <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+              <Button variant="contained" onClick={handleEnterOTP} sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                 Send OTP 
               </Button>
-              <EnterOTP open = {open} handleClose = {handleClose}/>
+              <EnterOTP/>
           </Box>
         </Box> 
       </TabPanel>

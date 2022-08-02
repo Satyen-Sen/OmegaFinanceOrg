@@ -47,7 +47,7 @@ function InvestmentPlansCard (props) {
                 </Typography> 
             </Box>
             <Box sx={{width:'100%', display:'flex', justifyContent:'center', mt:4, mb:4,}}>
-                <Button variant="contained" sx={{backgroundColor:'#FDAA3C', textTransform:'Capitalize', fontSize:16, fontWeight:600, fontFamily:'poppins', width:'70%', height:50, borderRadius:8, '&:hover':{backgroundColor:'#FEDFB5', color:'#FDAA3C',}}}>
+                <Button variant="contained" sx={{backgroundColor:'#FDAA3C', textTransform:'none', fontSize:16, fontWeight:600, fontFamily:'poppins', width:'70%', height:50, borderRadius:8, '&:hover':{backgroundColor:'#FEDFB5', color:'#FDAA3C',}}}>
                     Subscribe
                 </Button>
             </Box>

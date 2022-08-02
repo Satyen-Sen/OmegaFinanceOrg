@@ -8,9 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper";
 import stockAdvisors from '../../stockAdvisors.json';
 
-const DetailsButton = styled(Button)({textTransform:'capitalize', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:120, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
-const TypeButton = styled(Button)({textTransform:'capitalize', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:224, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
-const SubscribeButton = styled(Button)({textTransform:'capitalize', fontSize:16, borderRadius:20, fontFamily: 'poppins', fontWeight:800, color:'#FDAA3C', borderColor:'#FDAA3C', '&:hover': {borderColor:'#FDAA3C', backgroundColor:'#FDDDB2',}});
+const DetailsButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:120, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const TypeButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:224, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const SubscribeButton = styled(Button)({textTransform:'none', fontSize:16, borderRadius:20, fontFamily: 'poppins', fontWeight:800, color:'#FDAA3C', borderColor:'#FDAA3C', '&:hover': {borderColor:'#FDAA3C', backgroundColor:'#FDDDB2',}});
 
 let details = stockAdvisors.filter(stockAdvisors => stockAdvisors.category == "basic");
 

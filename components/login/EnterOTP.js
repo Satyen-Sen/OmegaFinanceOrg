@@ -56,9 +56,9 @@ export default function EnterOTP(props) {
 
                         <OTPInput value={OTP} onChange={setOTP} OTPLength={4} otpType="number" autoFocus inputStyles={{borderRadius:25, height:50, width:50, borderWidth:0, backgroundColor:'#d0d0d0',}}/>
 
-                        <Button variant="text" sx={{textTransform:'capitalize', m:4, ml:'60%', mr:-3,}}><Link href="#" variant="body2">Resend OTP</Link></Button>
+                        <Button variant="text" sx={{textTransform:'none', m:4, ml:'60%', mr:-3,}}><Link href="#" variant="body2">Resend OTP</Link></Button>
 
-                        <Button variant="contained" onClick={handleClose} sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
+                        <Button variant="contained" onClick={handleClose} sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'}, ml:2,}}>
                             Submit
                         </Button>
 

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { Card, CardActionArea, Link, Button, IconButton, Dialog, Stack, Box, Typography, } from '@mui/material'; 
+import { Card, Button, IconButton, Dialog, Stack, Box, Typography, } from '@mui/material'; 
 import CloseIcon from '@mui/icons-material/Close';
 import LogoImage from '../../public/LogoHorizontal.png';
 import User1 from '../../public/user1.png';
 import User2 from '../../public/user2.png';
 
-const detail1 = "Learn from experts about stocks, investment plans and many more.";
-const detail2 = "Make investment recommendations or conducts securities analysis for investors";
+const detail1 = "Learn from experts about stocks, investment plans & many more.";
+const detail2 = "Make recommendations or conduct analysis for investors";
 
 
 function Span(props){
@@ -18,21 +18,22 @@ function Span(props){
 
 function UserCard(props){
     return(
-        <Card elevation={8} sx={{boxShadow:10, borderRadius:3,}}>
-            <CardActionArea href="#" sx={{p:2, display:'flex', flexDirection:'column', alignItems:'center',}}>
+        <Card elevation={8} sx={{boxShadow:10, borderRadius:3, width:260,}}>
+            <Button sx={{p:2, textTransform:'none', display:'flex', flexDirection:'column', alignItems:'center',}} onClick={props.link}>
                 <Image src={props.image} width={110} height={125}/>
                 <Typography variant="body" sx={{fontSize:20, fontWeight:600, color:'#11193F', m:1,}}>
                     Stock {props.title}
                 </Typography>
-                <Typography variant="body" sx={{fontSize:12, color:'#4C5DAE', mb:1,}}>  
+                <Typography variant="body" sx={{fontSize:12, color:'#4C5DAE',}}>  
                     {props.details}
                 </Typography>
-            </CardActionArea>
+            </Button>
         </Card> 
     );
 };
 
-export default function LoginButton() {
+export default function LoginButton(props) {
+    const {handleInvestorLoginOpen} = props;
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -40,14 +41,18 @@ export default function LoginButton() {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleInvestorLogin = () => {
+        handleClose();
+        handleInvestorLoginOpen();
+    }
 
     return (
         <div>
-            <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
+            <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'none', width:170, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
                 Login/Register
             </Button>
-            <Dialog open={open} onClose={handleClose} PaperProps={{style:{borderRadius:16}}}>
-                <IconButton aria-label="close" onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
+            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16}}}>
+                <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
                     <CloseIcon/>
                 </IconButton>
                 <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
@@ -55,13 +60,13 @@ export default function LoginButton() {
                     <Typography variant="body" sx={{mt:6, fontSize:18, fontWeight:600,}}>
                         Select your domain of expertise 
                     </Typography>
-                    <Typography variant="body" sx={{fontSize:14, display:'flex',}}>
+                    <Typography variant="body" sx={{fontSize:14, display:'flex', mb:1,}}>
                         By proceeding, You agree to our<Span text="T&C"/>and<Span text="Privacy Policy."/>
                     </Typography>   
                     <Stack spacing={2} direction="row" sx={{mt:2}}>
-                        <UserCard title="Investor" details={detail1} image={User1}/>
-                        <UserCard title="Advisor" details={detail2} image={User2}/>
-                    </Stack> 
+                        <UserCard title="Investor" details={detail1} image={User1} link={handleInvestorLogin}/>
+                        <UserCard title="Advisor" details={detail2} image={User2} link={handleInvestorLogin}/>
+                    </Stack>
                 </Box>
             </Dialog>
         </div>

@@ -42,7 +42,7 @@ export default function LoginAsAdmin() {
   
     return (
       <div>
-        <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'capitalize', width:240, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
+        <Button variant="contained" onClick={handleClickOpen} sx={{textTransform:'none', width:240, fontFamily:'poppins', fontSize:18, height:45, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99'},}}>
           Login As Organiser
         </Button>
         <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} PaperProps={{style:{borderRadius:12,}}}>
@@ -66,7 +66,7 @@ export default function LoginAsAdmin() {
                             </Grid>
                         </Grid>
                     </Box>
-                    <Button variant="contained" sx={{textTransform:'capitalize', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', m:4, '&:hover':{backgroundColor:'#747A99'},}}>
+                    <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', m:4, '&:hover':{backgroundColor:'#747A99'},}}>
                         Login
                     </Button>
                     <Link href="#" variant="body2" sx={{position: 'absolute', right:28, bottom:-64, m:4,}}>Reset Password</Link> 

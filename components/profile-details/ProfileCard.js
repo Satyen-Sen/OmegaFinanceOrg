@@ -21,7 +21,7 @@ export default function ProfileCard(props) {
                             </Typography> 
                         </Card>
                         <Card sx={{width:180, borderRadius:3, display:'flex', flexDirection:'column', alignItems:'left', p:0.8, backgroundColor:'#FFF3B3', boxShadow:3,}}>
-                            <Typography variant="h4" color="#FDAA3C" sx={{fontSize:18, borderRadius:2, fontWeight:600, fontFamily:'poppins', mt:0.5,}}>
+                            <Typography variant="h4" color="#FDAA3C" sx={{fontSize:18, borderRadius:2, fontWeight:600, fontFamily:'poppins', mt:0.5, textTransform:'capitalize',}}>
                                 <DiamondTwoToneIcon sx={{mb:0.5, ml:1, height:25, width:25,}}/> {props.category}
                             </Typography>
                         </Card>

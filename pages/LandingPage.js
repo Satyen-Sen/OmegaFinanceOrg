@@ -1,13 +1,11 @@
 import Head from 'next/head';
 import Header from "../components/landingPage/Header";
 import Welcome from "../components/landingPage/Welcome";
-import PremiumAdvisors from '../components/primary/PremiumAdvisors';
-import AllStockAdvisors from '../components/primary/AllStockAdvisors';
-import Testimonials from "../components/primary/Testimonials";
+import Advisors from '../components/landingPage/Advisors';
+import Testimonials from "../components/landingPage/Testimonials";
 import Footer from '../components/landingPage/Footer';
 
 export default function LandingPage() {
-
     return (
         <div style={{margin:0}}>
             <Head>
@@ -23,8 +21,7 @@ export default function LandingPage() {
             <div style={{margin:0}}>
                 <Header/>
                 <Welcome/>
-                <PremiumAdvisors/>
-                <AllStockAdvisors/>
+                <Advisors/>
                 <Testimonials/>
                 <Footer/>
             </div>

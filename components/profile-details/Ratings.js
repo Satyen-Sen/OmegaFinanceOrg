@@ -1,35 +1,12 @@
 import * as React from 'react';
-import { Card, CardHeader, CardContent, Avatar, Rating, Box, Typography } from '@mui/material'; 
+import { Box, Typography } from '@mui/material'; 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper";
 import userReviews from '../../userReviews.json';
-
-function TestimonialsCard(props) {
-    return (
-        <Card sx={{borderRadius:2, boxShadow:3, m:6,}}>
-            <CardHeader
-                avatar={<Avatar src={props.avatar} sx={{ width:60, height:60,}}/>} 
-                subheader={<Rating defaultValue={props.rating} size="large" readOnly/>}
-            />
-            <CardContent>
-                <Box>
-                    <Typography variant="body" color="text.secondary">
-                        It is a great platform for investment. Interactive and clean User Interface. Features like creating your own portfolio are great..I started investing in Mutual Funds.
-                    </Typography>
-                </Box>
-                <Box sx={{mt:3}}>
-                    <Typography variant="h7" sx={{fontWeight:700}}>{props.title}</Typography>
-                </Box>
-                <Box>
-                    <Typography variant="body" sx={{fontSize:14}}>{props.position}</Typography>
-                </Box>  
-            </CardContent>
-        </Card>
-    );
-  };
+import TestimonialsCard from '../primary/TestimonialsCard';
 
 export default function Ratings() {
     return (

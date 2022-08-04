@@ -7,7 +7,7 @@
   {"id":"06", "category":"premium", "title":"Alex Green", "slug":"alex-green", "year":"3", "client":"45", "rating":"55", "avatar":"https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"}, 
   {"id":"07", "category":"premium", "title":"Henry Hall", "slug":"henry-hall", "year":"4", "client":"50", "rating":"60", "avatar":"https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"}, 
   {"id":"08", "category":"premium", "title":"Bob Baker", "slug":"bob-baker", "year":"3", "client":"25", "rating":"30", "avatar":"https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"}, 
-  {"id":"09", "category":"premium", "title":"Adam Bells", "slug":"adam-bells", "year":"5", "client":"55", "rating":"75", "avatar":"https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"},
+  {"id":"09", "category":"Premium", "title":"Adam Bells", "slug":"adam-bells", "year":"5", "client":"55", "rating":"75", "avatar":"https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"},
   {"id":"10", "category":"basic", "title":"Tom Evans", "slug":"tom-evans", "year":"5", "client":"60", "rating":"75", "avatar":"https://qph.cf2.quoracdn.net/main-qimg-54267778c97f83c195ad7b0efb64aaa9-lq"},
   {"id":"11", "category":"basic", "title":"John Smith", "slug":"john-smith", "year":"4", "client":"45", "rating":"55", "avatar":"https://qph.cf2.quoracdn.net/main-qimg-54267778c97f83c195ad7b0efb64aaa9-lq"},
   {"id":"12", "category":"basic", "title":"Slade Wilson", "slug":"slade-wilson", "year":"3", "client":"35", "rating":"40", "avatar":"https://qph.cf2.quoracdn.net/main-qimg-54267778c97f83c195ad7b0efb64aaa9-lq"},

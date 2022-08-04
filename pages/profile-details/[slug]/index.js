@@ -39,8 +39,11 @@ export default function DetailPage() {
                 <Box sx={{m:0, p:4, backgroundColor:'#FFFFFF', borderRadius:8, width:1030,}}>
                     <Box sx={{width:'100%', display:'flex', flexDirection:'column', alignItems:'center',}}>
                         <ProfileCard 
-                            avatar="https://www.stockvault.net//data/2009/06/09/109080/thumb16.jpg"
-                            title={data?.title || '---'} category="Premium" rating="250" year="5" 
+                            avatar={data?.avatar || '---'} 
+                            title={data?.title || '---'} 
+                            category={data?.category || '---'} 
+                            rating={data?.rating || '---'} 
+                            year={data?.year || '---'} 
                         />
                     </Box>
                     <SubscriptionPlans/>

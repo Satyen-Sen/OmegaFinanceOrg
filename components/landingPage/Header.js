@@ -6,8 +6,8 @@ import Logo from '../../public/Logo.png';
 import LoginDialog from '../modal/LoginDialog';
 import InvestorLogin from '../modal/InvestorLogin';
 import AdvisorLogin from '../modal/AdvisorLogin';
+import OrganiserLogin from '../modal/OrganiserLogin';
 
-import LoginAsAdmin from '../login/LoginAsAdmin'; 
 
 export default function Header() {
 
@@ -44,7 +44,7 @@ export default function Header() {
                             />
                             <InvestorLogin open={investorDialog} handleClose={()=>{setInverstorDialog(false)}}/>
                             <AdvisorLogin open={advisorDialog} handleClose={()=>{setAdvisorDialog(false)}}/>
-                            <LoginAsAdmin/>
+                            <OrganiserLogin/>
                             {/* <CreateAccount open={open} handleClose = {handleClose}/> */}
                         </Stack>
                     </Box>

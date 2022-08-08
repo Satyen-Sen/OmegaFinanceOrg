@@ -36,7 +36,7 @@ export default function DetailPage() {
             </Head>
 
             <Box sx={{m:0, p:4, backgroundColor:'#F5F5F5', display:'flex', flexDirection:'column', alignItems:'center',}}>
-                <Box sx={{m:0, p:4, backgroundColor:'#FFFFFF', borderRadius:8, width:1030,}}>
+                <Box sx={{m:0, p:4, backgroundColor:'#FFFFFF', borderRadius:8, width:1050,}}>
                     <Box sx={{width:'100%', display:'flex', flexDirection:'column', alignItems:'center',}}>
                         <ProfileCard 
                             avatar={data?.avatar || '---'} 

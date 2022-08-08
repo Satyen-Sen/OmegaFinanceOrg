@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import AdvisorCard from '../primary/AdvisorCard';
 import AdvisorCardWide from '../primary/AdvisorCardWide';
 import stockAdvisors from '../../stockAdvisors.json';
@@ -36,7 +36,7 @@ export default function Advisors() {
                     })}
                 </Swiper>
             
-                <Box sx={{width:'50%', ml:6, mt:4,}}>
+                <Box sx={{width:'50%', ml:6, mt:12,}}>
                     <Typography variant="h4" color="#11193F">
                         All Stock Advisors
                     </Typography>

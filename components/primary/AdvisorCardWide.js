@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Card, Stack, Avatar, Grid, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const DetailsButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:125, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
-const RepresentativeButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:259, backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const DetailsButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:'50%', backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
+const RepresentativeButton = styled(Button)({textTransform:'none', fontSize:12, borderRadius:20, fontFamily: 'poppins', width:'100%', backgroundColor:'#747A99', '&:hover': {backgroundColor:'#11193F',}});
 const SubscribeButton = styled(Button)({textTransform:'none', fontSize:16, borderRadius:20, fontFamily: 'poppins', fontWeight:800, color:'#FDAA3C', borderColor:'#FDAA3C', '&:hover': {borderColor:'#FDAA3C', backgroundColor:'#FDDDB2',}});
 
 

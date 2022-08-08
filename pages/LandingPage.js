@@ -3,7 +3,7 @@ import Header from "../components/landingPage/Header";
 import Welcome from "../components/landingPage/Welcome";
 import Advisors from '../components/landingPage/Advisors';
 import Testimonials from "../components/landingPage/Testimonials";
-import Footer from '../components/landingPage/Footer';
+import Footer from '../components/primary/Footer';
 
 export default function LandingPage() {
     return (

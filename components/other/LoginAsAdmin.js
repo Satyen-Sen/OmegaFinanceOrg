@@ -51,7 +51,7 @@ export default function LoginAsAdmin() {
                 <FormControl className="illustration-wrapper" initialValues={{remember:true}}>
                     <Typography variant="h5" sx={{m:4}}>Login As Organiser </Typography>  
                     <Box sx={{m:4, ml:8}}> 
-                        <Grid container spacing={0}>
+                        <Grid container spacing={2}>
                             <Grid item xs={2.5} sx={{display:'flex', alignItems:'center',}}>
                                 <Typography variant="h6" sx={{fontSize:18}}>Username :</Typography>
                             </Grid>

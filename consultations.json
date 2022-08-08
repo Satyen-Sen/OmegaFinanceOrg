@@ -1,0 +1,10 @@
+[
+    {"id":"01", "title":"John James", "duration":5, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}, 
+    {"id":"02", "title":"Amy Adams", "duration":4, "gender":"Female", "avatar":"https://mui.com/static/images/avatar/7.jpg"}, 
+    {"id":"03", "title":"Richard Joe", "duration":3, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}, 
+    {"id":"04", "title":"Emma Stone", "duration":4, "gender":"Female", "avatar":"https://mui.com/static/images/avatar/7.jpg"}, 
+    {"id":"05", "title":"Walter Lewis", "duration":5, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}, 
+    {"id":"06", "title":"Carl Harris", "duration":4, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}, 
+    {"id":"07", "title":"Andrew Scott", "duration":3, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}, 
+    {"id":"08", "title":"Kevin Brian", "duration":4, "gender":"Male", "avatar":"https://mui.com/static/images/avatar/2.jpg"}
+]

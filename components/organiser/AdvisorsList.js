@@ -1,162 +1,17 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Toolbar, Paper, Checkbox, Button, IconButton, Tooltip, FormControlLabel, Switch, } from '@mui/material'; 
-import DeleteIcon from '@mui/icons-material/Delete';
-import { visuallyHidden } from '@mui/utils';
+import { Box, Typography, Table, TableBody, TableRow, TableCell, Checkbox, Avatar, Button, } from '@mui/material'; 
+import TableToolbar from './TableToolbar';
+import TableHeader from './TableHeader';
 import stockAdvisors from '../../stockAdvisors.json';
 
-const headCells = [
-    {id: '01', numeric: false, disablePadding: true, label: 'Profile',},
-    {id: '02', numeric: false, disablePadding: true, label: 'Name',},
-    {id: '03', numeric: false, disablePadding: true, label: 'Category',},
-    {id: '04', numeric: false, disablePadding: true, label: 'Transaction Details',},
-    {id: '05', numeric: true, disablePadding: false, label: 'Pending Payment',},
-    {id: '06', numeric: false, disablePadding: true, label: 'Release Payment',},
-];
-
-function createData(name, calories, fat, carbs, protein) {
-    return {
-        name, calories, fat, carbs, protein,
-    };
-};
-
-const rows = [
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Donut', 452, 25.0, 51, 4.9),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Honeycomb', 408, 3.2, 87, 6.5),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Jelly Bean', 375, 0.0, 94, 0.0),
-    createData('KitKat', 518, 26.0, 65, 7.0),
-    createData('Lollipop', 392, 0.2, 98, 0.0),
-    createData('Marshmallow', 318, 0, 81, 2.0),
-    createData('Nougat', 360, 19.0, 9, 37.0),
-    createData('Oreo', 437, 18.0, 63, 4.0),
-];
-
-function descendingComparator(a, b, orderBy) {
-    if (b[orderBy] < a[orderBy]) {
-        return -1;
-    }
-    if (b[orderBy] > a[orderBy]) {
-        return 1;
-    }
-    return 0;
-}
-
-function getComparator(order, orderBy) {
-    return order === 'desc'
-        ? (a, b) => descendingComparator(a, b, orderBy)
-        : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-
-
-function EnhancedTableHead(props) {
-    const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
-    const createSortHandler = (property) => (event) => {onRequestSort(event, property)};
-
-    return (
-        <TableHead>
-            <TableRow>
-                <TableCell padding="checkbox">
-                    <Checkbox
-                        color="primary"
-                        indeterminate={numSelected > 0 && numSelected < rowCount}
-                        checked={rowCount > 0 && numSelected === rowCount}
-                        onChange={onSelectAllClick}
-                    />
-                </TableCell>
-
-                {headCells.map((headCell) => (
-                    <TableCell
-                        key={headCell.id}
-                        align={headCell.numeric ? 'right' : 'left'}
-                        padding={headCell.disablePadding ? 'none' : 'normal'}
-                        sortDirection={orderBy === headCell.id ? order : false}
-                    >
-                        <TableSortLabel
-                            active={orderBy === headCell.id}
-                            direction={orderBy === headCell.id ? order : 'asc'}
-                            onClick={createSortHandler(headCell.id)}
-                        >
-                            {headCell.label}
-                            {orderBy === headCell.id ? (
-                                <Box component="span" sx={visuallyHidden}>
-                                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                                </Box>
-                            ) : null}
-                        </TableSortLabel>
-                    </TableCell>
-                ))}
-            </TableRow>
-        </TableHead>
-    );
-};
-
-EnhancedTableHead.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired,
-};
-
-const EnhancedTableToolbar = (props) => {
-  
-    const { numSelected } = props;
-
-    return (
-        <Toolbar
-            sx={{...(numSelected > 0 && {
-                bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-            }),}}
-        >
-        
-            {numSelected > 0 ? (
-                <Box sx={{height:30, flex:'1 1 100%', mb:1,}}>
-                    <Typography variant="h5" sx={{flex:'1 1 100%', color:'#11193F',}}>{numSelected} selected</Typography>
-                </Box>
-                ) : (
-                <Box sx={{height:30, flex:'1 1 100%', mb:1,}}>
-                    <Typography variant="h4" sx={{flex:'1 1 100%', color:'#11193F',}}>List of Advisors</Typography>
-                </Box>
-            )}
-
-            {numSelected > 0 
-                ? (<Tooltip title="Delete"><IconButton><DeleteIcon/></IconButton></Tooltip>) 
-                : (<Box></Box>)
-            }
-        </Toolbar>
-    );
-};
-
-EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-};
 
 export default function AdvisorsList() {
 
-    const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
-    const [page, setPage] = React.useState(0);
-    const [dense, setDense] = React.useState(false);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
-    const handleRequestSort = (event, property) => {
-        const isAsc = orderBy === property && order === 'asc';
-        setOrder(isAsc ? 'desc' : 'asc');
-        setOrderBy(property);
-    };
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-          const newSelected = rows.map((n) => n.name);
+          const newSelected = stockAdvisors.map((n) => n.title);
           setSelected(newSelected);
           return;
         }
@@ -176,75 +31,60 @@ export default function AdvisorsList() {
         setSelected(newSelected);
     };
 
-    const handleChangePage = (event, newPage) => {setPage(newPage)};
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
     const isSelected = (name) => selected.indexOf(name) !== -1;
     
     return (
         <Box sx={{mb:2, borderRadius:2, boxShadow:5, backgroundColor:'#FFFFFF',}}>
 
-            <EnhancedTableToolbar numSelected={selected.length}/>
+            <TableToolbar numSelected={selected.length}/>
             
-            <TableContainer>
-                <Table>
-                    <EnhancedTableHead 
-                        numSelected={selected.length} 
-                        order={order} 
-                        orderBy={orderBy} 
-                        onSelectAllClick={handleSelectAllClick} 
-                        onRequestSort={handleRequestSort} 
-                        rowCount={rows.length}
-                    />
+            <Table>
+                <TableHeader numSelected={selected.length} onSelectAllClick={handleSelectAllClick} rowCount={stockAdvisors.length}/>
 
-                    <TableBody>
-                        {rows.slice().sort(getComparator(order, orderBy))
-                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                            .map((row, index) => {
+                <TableBody>
+                    {stockAdvisors.map((item) => {
 
-                                const isItemSelected = isSelected(row.name);
-                                const labelId = `enhanced-table-checkbox-${index}`;
+                        const isItemSelected = isSelected(item.title);
 
-                                return (
-                                  <TableRow
-                                      hover
-                                      onClick={(event) => handleClick(event, row.name)}
-                                      role="checkbox"
-                                      aria-checked={isItemSelected}
-                                      tabIndex={-1}
-                                      key={row.name}
-                                      selected={isItemSelected}
-                                  >
-                                      <TableCell padding="checkbox">
-                                          <Checkbox color="primary" checked={isItemSelected}/>
-                                      </TableCell>
-                                      <TableCell component="th" id={labelId} scope="row" padding='none'>
-                                          {row.name}
-                                      </TableCell>
-                                      <TableCell align="right">{row.calories}</TableCell>
-                                      <TableCell align="right">{row.fat}</TableCell>
-                                      <TableCell align="right">{row.carbs}</TableCell>
-                                      <TableCell align="right">{row.protein}</TableCell>
-                                  </TableRow>
-                                );
-                        })}
+                        return (
+                            <TableRow key={item.id} onClick={(event)=>handleClick(event,item.title)} selected={isItemSelected} role="checkbox" hover>
+                                <TableCell padding="checkbox">
+                                    <Checkbox color="primary" checked={isItemSelected}/>
+                                </TableCell>
 
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                                <TableCell align="left">
+                                    <Avatar alt={item.title} src={item.avatar} sx={{mt:-2, mb:-2, width:45, height:45,}}/>
+                                </TableCell>
 
-            <TablePagination
-                rowsPerPageOptions={[10, 20, 30]}
-                component="div"
-                count={rows.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-            />
+                                <TableCell align="left">
+                                    <Typography variant="h7">{item.title}</Typography>
+                                </TableCell>
+
+                                <TableCell align="left">
+                                    <Typography variant="h7" sx={{textTransform:'capitalize'}}>{item.category}</Typography>
+                                </TableCell>
+
+                                <TableCell align="center">
+                                    <Typography variant="h7">NA</Typography>
+                                </TableCell>
+
+                                <TableCell align="right">
+                                    <Typography variant="h7" sx={{mr:'24%'}}>Rs 70000</Typography>
+                                </TableCell>
+
+                                <TableCell align="right" sx={{p:1}}>
+                                    <Button variant="contained" sx={{textTransform:'capitalize', width:90, backgroundColor:'#11193F', mr:'24%', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                                        Send
+                                    </Button>
+                                </TableCell>
+
+                            </TableRow>
+                        );
+                    })}
+                </TableBody>
+
+            </Table>
+          
         </Box>
     );
 }

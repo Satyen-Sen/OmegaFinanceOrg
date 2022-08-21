@@ -3,8 +3,8 @@ import { Box, Typography, Toolbar, Button, } from '@mui/material';
 
 function PaymentButton() {
     return(
-        <Button variant="contained" sx={{textTransform:'capitalize', width:190, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-            Send Payment
+        <Button variant="contained" sx={{textTransform:'capitalize', fontSize:15, fontFamily:'poppins', width:340, mr:'3%', backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+            Release Selected Payments
         </Button>
     );
 };

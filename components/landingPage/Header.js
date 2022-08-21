@@ -30,7 +30,7 @@ export default function Header() {
         <div className={`header${sticky ? ' sticky' : ''}`}>
             <Navbar light>
 
-                <Container sx={{diaply:'flex'}}>
+                <Container sx={{disply:'flex'}}>
                     <Image src={Logo} alt="Omega Finance Group" width={80} height={40}/>
                     <Box sx={{ml:'62%', mt:-5,}}>
                         <Stack direction="row" spacing={1} sx={{display:'flex', alignContent:'flex-end',}}>

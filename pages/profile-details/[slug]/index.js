@@ -5,7 +5,7 @@ import { Box, Divider } from '@mui/material';
 import ProfileCard from '../../../components/profile-details/ProfileCard';
 import SubscriptionPlans from '../../../components/profile-details/SubscriptionPlans';
 import ConsultancyCards from '../../../components/profile-details/ConsultancyCards';
-import Certificates from '../../../components/profile-details/Certificates';
+// import Certificates from '../../../components/profile-details/Certificates';
 import Ratings from '../../../components/profile-details/Ratings';
 import OrganisationDetails from '../../../components/profile-details/OrganisationDetails';
 import OtherAdvisors from '../../../components/profile-details/OtherAdvisors';
@@ -48,7 +48,7 @@ export default function DetailPage() {
                     </Box>
                     <SubscriptionPlans/>
                     <ConsultancyCards/>
-                    <Certificates/>
+                    {/* <Certificates/> */}
                     <Ratings/>
                     <Box sx={{width:'100%', display:'flex', flexDirection:'column', alignItems:'center', mt:8, mb:8,}}>
                         <OrganisationDetails 

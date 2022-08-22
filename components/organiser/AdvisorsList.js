@@ -52,28 +52,28 @@ export default function AdvisorsList() {
                                     <Checkbox color="primary" checked={isItemSelected}/>
                                 </TableCell>
 
-                                <TableCell align="left">
+                                <TableCell>
                                     <Avatar alt={item.title} src={item.avatar} sx={{mt:-2, mb:-2, width:45, height:45,}}/>
                                 </TableCell>
 
-                                <TableCell align="left">
+                                <TableCell>
                                     <Typography variant="h7">{item.title}</Typography>
                                 </TableCell>
 
-                                <TableCell align="left">
+                                <TableCell>
                                     <Typography variant="h7" sx={{textTransform:'capitalize'}}>{item.category}</Typography>
                                 </TableCell>
 
-                                <TableCell align="center">
+                                <TableCell sx={{pl:'6%'}}>
                                     <Typography variant="h7">NA</Typography>
                                 </TableCell>
 
-                                <TableCell align="right">
-                                    <Typography variant="h7" sx={{mr:'24%'}}>Rs 70000</Typography>
+                                <TableCell sx={{pl:'6%'}}>
+                                    <Typography variant="h7">Rs 70000</Typography>
                                 </TableCell>
 
-                                <TableCell align="right" sx={{p:1}}>
-                                    <Button variant="contained" sx={{textTransform:'capitalize', width:90, backgroundColor:'#11193F', mr:'24%', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
+                                <TableCell sx={{p:0, pl:'7%',}}>
+                                    <Button variant="contained" sx={{textTransform:'capitalize', width:90, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                                         Send
                                     </Button>
                                 </TableCell>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Typography, Button, Menu, MenuItem, ListItemIcon, Avatar, } from '@mui/material'; 
+import { Button, Menu, MenuItem, ListItemIcon, Avatar, } from '@mui/material'; 
 import SettingsIcon from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 

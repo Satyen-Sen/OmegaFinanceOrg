@@ -8,11 +8,10 @@ import InvestorLogin from '../modal/InvestorLogin';
 import AdvisorLogin from '../modal/AdvisorLogin';
 import OrganiserLogin from '../modal/OrganiserLogin';
 
-
 export default function Header() {
 
     const [sticky, setSticky] = useState(false);
-    const [investorDialog, setInverstorDialog] = useState(false);
+    const [investorDialog, setInvestorDialog] = useState(false);
     const [advisorDialog, setAdvisorDialog] = useState(false);
 
     useEffect(() => {
@@ -35,17 +34,16 @@ export default function Header() {
                     <Box sx={{ml:'62%', mt:-5,}}>
                         <Stack direction="row" spacing={1} sx={{display:'flex', alignContent:'flex-end',}}>
                             <LoginDialog 
-                                handleInvestorLoginOpen={()=>{
-                                    setInverstorDialog(true);
-                                }} 
-                                handleAdvisorLoginOpen={() => {
-                                    setAdvisorDialog(true);
-                                }}
+                                handleInvestorLoginOpen={() => {setInvestorDialog(true)}} 
+                                handleAdvisorLoginOpen={() => {setAdvisorDialog(true)}}
                             />
-                            <InvestorLogin open={investorDialog} handleClose={()=>{setInverstorDialog(false)}}/>
-                            <AdvisorLogin open={advisorDialog} handleClose={()=>{setAdvisorDialog(false)}}/>
+                            <InvestorLogin open={investorDialog} 
+                                handleClose={()=>{setInvestorDialog(false)}} 
+                            />
+                            <AdvisorLogin open={advisorDialog} 
+                                handleClose={()=>{setAdvisorDialog(false)}}
+                            />
                             <OrganiserLogin/>
-                            {/* <CreateAccount open={open} handleClose = {handleClose}/> */}
                         </Stack>
                     </Box>
                 </Container>  

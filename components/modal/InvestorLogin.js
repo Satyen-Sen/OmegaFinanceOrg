@@ -1,15 +1,19 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { Stack, Link, Button, IconButton, Divider, Dialog, Box, Typography, } from '@mui/material'; 
+import { Box, Typography, Button, Stack, IconButton, Divider, Dialog, } from '@mui/material'; 
 import CloseIcon from '@mui/icons-material/Close';
 import LoginTabs from './LoginTabs';
 import facebookIcon from '../../public/images/facebook.png';
 import googleIcon from '../../public/images/google.png';
 import appleIcon from '../../public/images/apple.png';
+import CreateAccountInvestor from '../createAccount/CreateAccountInvestor';
+import ResetInvestorPassword from '../resetPassword/ResetInvestorPassword';
 
 
 export default function InvestorLogin(props) {
-    const {open, handleClose} = props;
+
+    const {open, handleClose,} = props;
+
     return (
         <div>
             <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16,}}}>
@@ -35,10 +39,10 @@ export default function InvestorLogin(props) {
                             <Typography sx={{fontSize:12, fontFamily:'poppins',}}>&nbsp; Apple</Typography>
                         </Button>
                     </Stack>
-                    <Stack spacing={16} direction="row" sx={{mt:4}}>
-                        <Link href="#" variant="body2">Create an Account</Link>
-                        <Link href="#" variant="body2">Forgot password?</Link>
-                    </Stack>
+                    <Stack spacing={14} direction="row" sx={{mt:4}}>
+                        <CreateAccountInvestor/>
+                        <ResetInvestorPassword/>
+                    </Stack>    
                 </Box>
             </Dialog>
         </div>

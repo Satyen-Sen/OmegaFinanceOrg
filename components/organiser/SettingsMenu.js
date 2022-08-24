@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, Menu, MenuItem, ListItemIcon, Avatar, } from '@mui/material'; 
+import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
@@ -15,10 +16,10 @@ export default function SettingsMenu() {
             <Button variant="text" onClick={handleClick}>
                 <Avatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg"/>
             </Button>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}> 
 
                 <MenuItem onClick={handleClose}>
-                    <ListItemIcon><Avatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" sx={{width:24, height:24,}}/></ListItemIcon>
+                    <ListItemIcon><PersonIcon/></ListItemIcon>
                     My Account
                 </MenuItem>
 

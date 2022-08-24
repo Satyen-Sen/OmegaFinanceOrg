@@ -28,7 +28,7 @@ function UserCard(props){
                     {props.details}
                 </Typography>
             </Button>
-        </Card> 
+        </Card>
     );
 };
 

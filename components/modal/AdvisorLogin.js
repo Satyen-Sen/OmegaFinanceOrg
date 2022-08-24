@@ -1,22 +1,26 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { Stack, Link, Button, IconButton, Divider, Dialog, Box, Typography, } from '@mui/material'; 
+import { Stack, Button, IconButton, Divider, Dialog, Box, Typography, } from '@mui/material'; 
 import CloseIcon from '@mui/icons-material/Close';
 import LoginTabs from './LoginTabs';
 import facebookIcon from '../../public/images/facebook.png';
 import googleIcon from '../../public/images/google.png';
 import appleIcon from '../../public/images/apple.png';
+import CreateAccountAdvisor from '../createAccount/CreateAccountAdvisor';
+import ResetAdvisorPassword from '../forgetPassword/ResetAdvisorPassword';
 
 
 export default function AdvisorLogin(props) {
+
     const {open, handleClose} = props;
+
     return (
         <div>
             <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16,}}}>
                 <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
                     <CloseIcon/>
                 </IconButton>
-                <Box sx={{height:510, width:450, display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
+                <Box sx={{height:500, width:450, display:'flex', flexDirection:'column', alignItems:'center', p:4,}}>
                     <Typography variant="h5" sx={{m:1}}>Login with your : </Typography>  
                     <LoginTabs target="/advisor/"/>
                     <Divider variant="middle" sx={{borderWidth:2, backgroundColor:'#606060', m:2, width:'116%',}}/>
@@ -35,9 +39,9 @@ export default function AdvisorLogin(props) {
                             <Typography sx={{fontSize:12, fontFamily:'poppins',}}>&nbsp; Apple</Typography>
                         </Button>
                     </Stack>
-                    <Stack spacing={16} direction="row" sx={{mt:4}}>
-                        <Link href="#" variant="body2">Create an Account</Link>
-                        <Link href="#" variant="body2">Forgot password?</Link>
+                    <Stack spacing={14} direction="row" sx={{mt:4}}>
+                        <CreateAccountAdvisor/>
+                        <ResetAdvisorPassword/>
                     </Stack>
                 </Box>
             </Dialog>

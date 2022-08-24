@@ -6,7 +6,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 
 
-export default function CreateAccountInvestor() {
+export default function CreateAccountAdvisor() {
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {setOpen(true)};

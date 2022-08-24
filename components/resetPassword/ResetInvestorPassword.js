@@ -1,5 +1,7 @@
 import * as React from 'react';
+import Image from 'next/image';
 import {  Box, Typography, Dialog, Button, IconButton, } from '@mui/material'; 
+import Logo from '../../public/Logo.png'; 
 import CloseIcon from '@mui/icons-material/Close';
 import WestRoundedIcon from '@mui/icons-material/WestRounded';
 
@@ -34,7 +36,8 @@ export default function ResetAdvisorPassword() {
                 </IconButton>
 
                 <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, flexGrow:1}}>
-
+                    
+                    <Image src={Logo} width={120} height={60} sx={{m:2}}/>
                     <Typography variant="h4" sx={{m:2, mt:4,}}>{steps[activeStep].label}</Typography>
                     <Typography variant="body" sx={{m:2}} align='center'>{steps[activeStep].description}</Typography>
                     {/* <Box sx={{m:4}}>{activeStep===0 ? () : activeStep===1 ? () : activeStep===2 ? () : ()}</Box> */}

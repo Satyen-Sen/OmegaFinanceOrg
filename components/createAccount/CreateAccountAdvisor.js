@@ -1,73 +1,63 @@
 import * as React from 'react';
-import {  Box, Typography, Dialog, Button, IconButton, FormControlLabel, RadioGroup, Radio, TextField, } from '@mui/material'; 
-import MuiPhoneNumber from "material-ui-phone-number";
+import Image from 'next/image';
+import { Box, Dialog, Button, IconButton, } from '@mui/material'; 
 import CloseIcon from '@mui/icons-material/Close';
-import PersonIcon from '@mui/icons-material/Person';
-import MailIcon from '@mui/icons-material/Mail';
+import WestRoundedIcon from '@mui/icons-material/WestRounded';
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
+import Step4 from './Step4';
+import NextButton from '../../public/CreateAccount/Button.png';
+
+
+const stepperButton = [
+    { id:'01', button:'Reset Password',},
+    { id:'02', button:'Next',},
+    { id:'03', button:'Submit',},
+    { id:'04', button:'Continue',},
+];
+const stepperLength = stepperButton.length;
 
 
 export default function CreateAccountAdvisor() {
 
     const [open, setOpen] = React.useState(false);
+    const [activeStep, setActiveStep] = React.useState(0);
+    
     const handleClickOpen = () => {setOpen(true)};
     const handleClose = () => {setOpen(false)};
+
+    const handleNext = () => {setActiveStep((prevActiveStep) => prevActiveStep + 1)};
+    const handleBack = () => {setActiveStep((prevActiveStep) => prevActiveStep - 1)};
 
     return (
         <div>
             <Button variant="text" onClick={handleClickOpen} sx={{textTransform:'none'}}>
-                Create an Account
+                Create Account
             </Button>
-            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16}}}>
-                <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080' }}>
+            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16, height:550, width:500,}}}>
+                <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080',}}>
                     <CloseIcon/>
                 </IconButton>
 
-                <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', p:4, height:600,}}>
-                    <Typography variant="h4" sx={{m:2}}>Create Investor Account</Typography>  
-
-                    <Box sx={{ display:'flex', alignItems:'flex-end',}}>
-                        <PersonIcon sx={{color:'#11193F', mr:1, my: 0.5}}/>
-                        <TextField label="Name" variant="standard" sx={{width:248}} size="small"/>
-                    </Box>       
-                        
-                    <Box sx={{ display:'flex', alignItems:'flex-end', m:2,}}>
-                        <MailIcon sx={{color:'#11193F', mr:1, my:0.5}}/>
-                        <TextField label="Email" variant="standard" sx={{width:248}} size="small"/>
-                    </Box> 
-
-                    <Box sx={{display:'flex', alignItems:'center', m:2,}}>
-                        <Typography variant="h6" sx={{fontSize:18, fontWeight:600, color:'#505050'}}>Phone : &nbsp;</Typography>  
-                        <MuiPhoneNumber defaultCountry={"ca"} onChange={console.log} sx={{width:200}}/> 
-                    </Box>
-
-                    <Box sx={{display:'flex', alignItems:'center', m:2,}}>
-                        <Typography variant="h6" sx={{fontSize:18, fontWeight:600, color:'#505050',}}>
-                            Gender : &nbsp;&nbsp; &nbsp;
-                        </Typography>
-                        <RadioGroup row>
-                            <FormControlLabel value="male" control={<Radio/>} label="Male"/>
-                            <FormControlLabel value="female" control={<Radio/>} label="Female" sx={{m:0}}/>
-                        </RadioGroup>
-                    </Box>
-
-                    <Box sx={{display:'flex', alignItems:'center', m:2,}}>
-                        <Typography variant="h6" sx={{fontSize:18, fontWeight:600, color:'#505050',}}>
-                            Upload Documents : &nbsp; &nbsp;
-                        </Typography>
-                        <Button variant="outlined" component="label" sx={{textTransform:'none',}}>
-                            Browse<input hidden accept="image/*" multiple type="file" />
-                        </Button>
-                    </Box>
-
-                    <Typography variant="h6" sx={{fontSize:12, color:'#707070', mt:-1.5, width:280,}}>
-                        You can provide any valid document such as Canada Citizenship, Green Card, Passport etc.   
-                    </Typography> 
-                     
-                    <Box sx={{display:'flex', justifyContent:'center', mt:4,}} onClick={handleClose}>
-                        <Button variant="contained" href="#" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:120, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                            Submit
-                        </Button> 
-                    </Box>
+                <Box sx={{pt:2, flexGrow:1,}}>
+                    {activeStep===0 ? (<Step1/>) : activeStep===1 ? (<Step2/>) : activeStep===2 ? (<Step3/>) : (<Step4/>) } 
+                </Box>
+                
+                {activeStep===0 ? (
+                    <Button variant="text" sx={{mb:5}} onClick={activeStep === stepperLength-1 ? handleClose : handleNext}>
+                        <Image src={NextButton} alt="NextButton" width={45} height={40}/>
+                    </Button>
+                ) : ( 
+                    <Button variant="text" sx={{mb:1}} onClick={activeStep === stepperLength-1 ? handleClose : handleNext}>
+                        <Image src={NextButton} alt="NextButton" width={45} height={40}/>
+                    </Button>
+                )}
+                
+                <Box sx={{m:2, mt:0,}}>
+                    <Button size="small" onClick={handleBack} hidden={activeStep===0} sx={{textTransform:'none', fontFamily:'poppins', color:'#808080',}}>
+                        <WestRoundedIcon/> &nbsp; Previous Step
+                    </Button>
                 </Box>
             </Dialog>
         </div>

@@ -9,10 +9,10 @@ import AdvStep4 from './AdvStep4';
 
 
 const stepperButton = [
-    {label:'Reset Your Password', button:'Submit',},
-    {label:'Enter Verification Code', button:'Next',},
-    {label:'Create a New Password', button:'Reset Password',},
-    {label:'Reset Successful', button:'Continue',},
+    { id:'01', button:'Reset Password',},
+    { id:'02', button:'Next',},
+    { id:'03', button:'Submit',},
+    { id:'04', button:'Continue',},
 ];
 const stepperLength = stepperButton.length;
 

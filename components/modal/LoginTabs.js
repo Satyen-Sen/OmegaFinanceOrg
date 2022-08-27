@@ -7,6 +7,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
 import KeyRoundedIcon from '@mui/icons-material/KeyRounded';
+import EnterOTP from './EnterOTP'; 
 
 
 function EmailTab(props){
@@ -36,9 +37,9 @@ function EmailTab(props){
                     <Input type={values.showPassword ? 'text' : 'password'} value={values.password} onChange={handlePassword('password')} size="small"
                     endAdornment={ 
                         <InputAdornment position="end">
-                        <IconButton onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
-                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
+                            <IconButton onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
+                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
                         </InputAdornment>
                     }/>
                 </FormControl>
@@ -54,16 +55,14 @@ function EmailTab(props){
     );
 };
 
-function PhoneTab(){
+function PhoneTab(props){
     return(
         <Box width={300} height={136}>
             <Box sx={{display:'flex', justifyContent:'center', mt:4,}}>
                 <MuiPhoneNumber defaultCountry={"ca"}/>
             </Box>
-            <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>
-                <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:150, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
-                    Send OTP 
-                </Button>
+            <Box sx={{display:'flex', justifyContent:'center', mt:4, p:2, pt:0,}}>  
+                <EnterOTP targetlink={props.link}/>
             </Box>
         </Box> 
     );
@@ -83,7 +82,7 @@ export default function LoginTabs(props) {
                     <Row>
                         <Tab.Content>
                             <Tab.Pane eventKey="first"><EmailTab link={props.target}/></Tab.Pane>
-                            <Tab.Pane eventKey="second"><PhoneTab/></Tab.Pane>
+                            <Tab.Pane eventKey="second"><PhoneTab link={props.target}/></Tab.Pane>
                         </Tab.Content>
                     </Row>
                 </Col>

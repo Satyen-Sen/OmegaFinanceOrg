@@ -30,8 +30,8 @@ function CardItem(props) {
 export default function Step3() {
 
     return (
-        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', height:470,}}>
-            <Typography variant="body" sx={{fontSize:28, color:'#11193F', m:1,}}>Advisor Type</Typography>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', my:2,}}>
+            <Typography variant="body" sx={{fontSize:28, color:'#11193F',}}>Advisor Type</Typography>
             <Typography variant="body" sx={{m:2}} align='center'>Please select the type of advisorory services you provide.</Typography>
 
             <Box sx={{display:'flex'}}>

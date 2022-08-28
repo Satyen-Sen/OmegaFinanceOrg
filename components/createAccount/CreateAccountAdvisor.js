@@ -7,16 +7,11 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import Step5 from './Step5';
+import Step6 from './Step6';
+import Step7 from './Step7';
 import NextButton from '../../public/CreateAccount/Button.png';
-
-
-const stepperButton = [
-    { id:'01', button:'Reset Password',},
-    { id:'02', button:'Next',},
-    { id:'03', button:'Submit',},
-    { id:'04', button:'Continue',},
-];
-const stepperLength = stepperButton.length;
+import CheckButton from '../../public/CreateAccount/Check.png';
 
 
 export default function CreateAccountAdvisor() {
@@ -35,27 +30,43 @@ export default function CreateAccountAdvisor() {
             <Button variant="text" onClick={handleClickOpen} sx={{textTransform:'none'}}>
                 Create Account
             </Button>
-            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16, height:550, width:500,}}}>
+            <Dialog onClose={handleClose} open={open} PaperProps={{style:{borderRadius:16, height:550, width:500, display:'flex', flexDirection:'column', alignItems:'center',}}}>
                 <IconButton onClick={handleClose} sx={{position: 'absolute', right:0, top:0, color:'#808080',}}>
                     <CloseIcon/>
                 </IconButton>
 
                 <Box sx={{pt:2, flexGrow:1,}}>
-                    {activeStep===0 ? (<Step1/>) : activeStep===1 ? (<Step2/>) : activeStep===2 ? (<Step3/>) : (<Step4/>) } 
+                    {
+                        activeStep===0 ? (<Step1/>) 
+                        : activeStep===1 ? (<Step2/>) 
+                        : activeStep===2 ? (<Step3/>) 
+                        : activeStep===3 ? (<Step4/>) 
+                        : activeStep===4 ? (<Step5/>) 
+                        : activeStep===5 ? (<Step6/>) 
+                        : (<Step7 action={handleClose}/>) 
+                    } 
+                </Box>
+
+                <Box>
+                    {activeStep===0 ? (
+                        <IconButton variant="text" sx={{mb:6}} onClick={handleNext}>
+                            <Image src={NextButton} alt="NextButton" width={50} height={45}/>
+                        </IconButton>
+                    ) : activeStep===5 ? (
+                        <IconButton variant="text" onClick={handleNext}>
+                            <Image src={CheckButton} alt="NextButton" width={50} height={80}/>
+                        </IconButton>
+                    ) : activeStep===6 ? (
+                            <></>
+                    ) : ( 
+                        <IconButton variant="text" onClick={handleNext}>
+                            <Image src={NextButton} alt="NextButton" width={50} height={45}/>
+                        </IconButton>
+                    )}
                 </Box>
                 
-                {activeStep===0 ? (
-                    <Button variant="text" sx={{mb:5}} onClick={activeStep === stepperLength-1 ? handleClose : handleNext}>
-                        <Image src={NextButton} alt="NextButton" width={45} height={40}/>
-                    </Button>
-                ) : ( 
-                    <Button variant="text" sx={{mb:1}} onClick={activeStep === stepperLength-1 ? handleClose : handleNext}>
-                        <Image src={NextButton} alt="NextButton" width={45} height={40}/>
-                    </Button>
-                )}
-                
-                <Box sx={{m:2, mt:0,}}>
-                    <Button size="small" onClick={handleBack} hidden={activeStep===0} sx={{textTransform:'none', fontFamily:'poppins', color:'#808080',}}>
+                <Box sx={{display:'flex', justifyContent:'left', alignItems:'center', width:'100%',}}>
+                    <Button size="small" onClick={handleBack} hidden={activeStep===0} sx={{textTransform:'none', fontFamily:'poppins', color:'#808080', m:2, mt:0,}}>
                         <WestRoundedIcon/> &nbsp; Previous Step
                     </Button>
                 </Box>

@@ -25,7 +25,7 @@ export default function Step1() {
     const handleSelectOrganisation = () => {setVisibleIndividual(true), setVisibleOrganisation(false)};
 
     return (
-        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', mt:2, height:380,}}>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', my:2,}}>
             <Typography variant="body" sx={{m:2, fontSize:28, color:'#11193F',}}>Individual or Organisation</Typography>
             <Typography variant="body" sx={{m:2}} align='center'>Do you belong to any organisation or work as an individual?</Typography>
 

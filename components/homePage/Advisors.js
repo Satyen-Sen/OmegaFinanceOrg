@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Typography } from '@mui/material';
 import AdvisorCard from '../primary/AdvisorCard';
 import AdvisorCardWide from '../primary/AdvisorCardWide';
-import stockAdvisors from '../../stockAdvisors.json';
+import stockAdvisors from '../../data/stockAdvisors.json';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

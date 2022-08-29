@@ -58,7 +58,7 @@ export default function CreateAccountAdvisor() {
                         </IconButton>
                     ) : activeStep===6 ? (
                             <></>
-                    ) : ( 
+                    ) : (
                         <IconButton variant="text" onClick={handleNext}>
                             <Image src={NextButton} alt="NextButton" width={50} height={45}/>
                         </IconButton>
@@ -66,9 +66,11 @@ export default function CreateAccountAdvisor() {
                 </Box>
                 
                 <Box sx={{display:'flex', justifyContent:'left', alignItems:'center', width:'100%',}}>
-                    <Button size="small" onClick={handleBack} hidden={activeStep===0} sx={{textTransform:'none', fontFamily:'poppins', color:'#808080', m:2, mt:0,}}>
-                        <WestRoundedIcon/> &nbsp; Previous Step
-                    </Button>
+                    {activeStep===6 ? (<></>) : ( 
+                        <Button size="small" onClick={handleBack} hidden={activeStep===0} sx={{textTransform:'none', fontFamily:'poppins', color:'#808080', m:2, mt:0,}}>
+                            <WestRoundedIcon/> &nbsp; Previous Step
+                        </Button>
+                    )}
                 </Box>
             </Dialog>
         </div>

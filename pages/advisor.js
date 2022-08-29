@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import { Box } from '@mui/material';
-import HeaderAdvisor from '../../components/homePage/HeaderAdvisor';
-import MainAdvisor from '../../components/homePage/MainAdvisor';
-import Consultations from '../../components/homePage/Consultations';
-import Organisations from '../../components/homePage/Organisations';
-import Advisors from '../../components/homePage/Advisors';
-import ProfileOnTop from '../../components/homePage/ProfileOnTop';
-import Footer from '../../components/primary/Footer';
+import HeaderAdvisor from '../components/homePage/HeaderAdvisor';
+import MainAdvisor from '../components/homePage/MainAdvisor';
+import Consultations from '../components/homePage/Consultations';
+import Organisations from '../components/homePage/Organisations';
+import Advisors from '../components/homePage/Advisors';
+import ProfileOnTop from '../components/homePage/ProfileOnTop';
+import Footer from '../components/primary/Footer';
 
 export default function Home() {
     return (

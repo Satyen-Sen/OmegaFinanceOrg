@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Typography, Table, TableBody, TableRow, TableCell, Checkbox, Avatar, Button, } from '@mui/material'; 
 import TableToolbar from './TableToolbar';
 import TableHeader from './TableHeader';
-import stockAdvisors from '../../stockAdvisors.json';
+import stockAdvisors from '../../data/stockAdvisors.json';
 
 
 export default function AdvisorsList() {

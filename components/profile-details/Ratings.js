@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper";
-import userReviews from '../../userReviews.json';
+import userReviews from '../../data/userReviews.json';
 import TestimonialsCard from '../primary/TestimonialsCard';
 
 export default function Ratings() {

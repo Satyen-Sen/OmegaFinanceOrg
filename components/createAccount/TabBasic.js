@@ -33,10 +33,10 @@ export default function TabBasic() {
                 <ListingRed text='Add unlimited numbers of subscription plan no limitation'/>
             </List>
             <Link href='/advisor/' sx={{mt:2, textDecoration:'none',}}>
-                <Button variant='contained' sx={{textTransform:'none', fontFamily:'poppins', fontWeight:600, fontSize:14, backgroundColor:'#FDAA3C', '&:hover':{backgroundColor:'#FDDDB2', color:'#FFFFFF'},}}>
+                <Button variant='outlined' sx={{my:2, color:'#FDAA3C', borderColor:'#FDAA3C', borderRadius:2, width:150, textTransform:'none', fontFamily:'poppins', fontWeight:600, fontSize:16,}}>
                     Continue
-                </Button> 
+                </Button>
             </Link>
         </Box>
     );
-}
+};

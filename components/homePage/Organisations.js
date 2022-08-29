@@ -6,13 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper";
-
-const organisationDetails = [
-    {id:"01", title:"Green Villa Organisation", rating:"5", avatar:"https://t4.ftcdn.net/jpg/03/36/74/97/360_F_336749776_JlC1FjERlhyl4OqgrZoon1XVvDHut2Q2.jpg"},
-    {id:"02", title:"Ocean Valley Organisation", rating:"4", avatar:"https://t4.ftcdn.net/jpg/03/36/74/97/360_F_336749776_JlC1FjERlhyl4OqgrZoon1XVvDHut2Q2.jpg"},
-    {id:"03", title:"Max Finance Organisation", rating:"3", avatar:"https://t4.ftcdn.net/jpg/03/36/74/97/360_F_336749776_JlC1FjERlhyl4OqgrZoon1XVvDHut2Q2.jpg"},
-    {id:"04", title:"Prime Investors Group", rating:"5", avatar:"https://t4.ftcdn.net/jpg/03/36/74/97/360_F_336749776_JlC1FjERlhyl4OqgrZoon1XVvDHut2Q2.jpg"},
-]
+import organisationDetails from '../../data/organisationDetails.json';
 
 export default function Organisations() {
     return (

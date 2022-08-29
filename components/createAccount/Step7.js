@@ -52,8 +52,12 @@ export default function Step7() {
                     }/>
                 </Tabs>
             </Box>  
-            <TabPanel value={value} index={0}><TabBasic/></TabPanel>
-            <TabPanel value={value} index={1}><TabPremium/></TabPanel>
+            <TabPanel value={value} index={0}>
+                <TabBasic/>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                <TabPremium/>
+            </TabPanel>
         </Box>
     );
 };

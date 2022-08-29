@@ -5,8 +5,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper";
-import consultations from '../../consultations.json';
+import consultations from '../../data/consultations.json';
 import ConsultationCard from '../primary/ConsultationCard';
+
 
 export default function Consultations() {
     return (

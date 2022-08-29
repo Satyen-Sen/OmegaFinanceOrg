@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { Box, Typography } from '@mui/material';
-import Header from '../../components/organiser/Header';
-import AdvisorsList from '../../components/organiser/AdvisorsList';
+import Header from '../components/organiser/Header';
+import AdvisorsList from '../components/organiser/AdvisorsList';
 
 export default function OrganiserHome() {
 

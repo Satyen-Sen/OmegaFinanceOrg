@@ -9,7 +9,7 @@ import Certificates from '../../../components/profile-details/Certificates';
 import Ratings from '../../../components/profile-details/Ratings';
 import OrganisationDetails from '../../../components/profile-details/OrganisationDetails';
 import OtherAdvisors from '../../../components/profile-details/OtherAdvisors';
-import stockAdvisors from '../../../stockAdvisors.json';
+import stockAdvisors from '../../../data/stockAdvisors.json';
 
 
 export default function DetailPage() {

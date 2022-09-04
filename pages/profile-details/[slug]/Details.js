@@ -12,7 +12,7 @@ import OtherAdvisors from '../../../components/profile-details/OtherAdvisors';
 import stockAdvisors from '../../../data/stockAdvisors.json';
 
 
-export default function DetailPage() {
+export default function Details() {
     const Router = useRouter();
     const { slug } = Router.query;
     const [data, setData] = React.useState(null);

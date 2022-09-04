@@ -13,6 +13,7 @@ function Span(props){
         </Typography>
     );
 }; 
+
 export default function ConsultationCard(props) {
     return (
         <Card sx={{borderRadius:5, m:5, display:'flex', flexDirection:'column',}}>

@@ -12,6 +12,7 @@ function InputField(props) {
     );
 };
 
+
 export default function Step6() {
 
     return (

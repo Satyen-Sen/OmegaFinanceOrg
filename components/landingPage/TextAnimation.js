@@ -31,4 +31,4 @@ export default function TextAnimation({title, listarray, desc,}) {
             </Box>
         </div>
     );
-}
+};

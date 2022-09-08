@@ -5,6 +5,7 @@ import { Box, Container } from '@mui/material';
 import Logo from '../../public/Logo.png'; 
 import SettingsMenu from './SettingsMenu';
 
+
 export default function Header() {
 
     useEffect(() => {window.addEventListener('scroll', handleScroll)});

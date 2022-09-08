@@ -62,7 +62,7 @@ export default function OrganiserLogin() {
                     </Box> 
 
                     <Box sx={{display:'flex', justifyContent:'center', mt:3, mb:2,}}>
-                        <Link href="/organiser/">
+                        <Link href="/Organiser/">
                             <Button variant="contained" sx={{textTransform:'none', fontFamily:'poppins', fontSize:14, height:36, width:120, backgroundColor:'#11193F', '&:hover':{backgroundColor:'#747A99', color:'#FFFFFF'},}}>
                                 Login
                             </Button>

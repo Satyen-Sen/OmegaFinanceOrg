@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { Box, Dialog, Button, IconButton, } from '@mui/material'; 
+import { Avatar, Box, Dialog, Button, IconButton, } from '@mui/material'; 
 import CloseIcon from '@mui/icons-material/Close';
 import WestRoundedIcon from '@mui/icons-material/WestRounded';
 import Step1 from './Step1';
